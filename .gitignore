@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.Python
+build/
+dist/
+*.egg
+
+# 虚拟环境
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 配置文件
+config/config.yaml
+
+# 消息文件
+msg/*.asc
+msg/*.csv
+msg/*.log
+
+# 协议文件
+protocol/*.xls
+protocol/*.xlsx
+protocol/dbc/*.dbc
+
+# 临时文件
+*.tmp
+*.bak
+*.cache
+
+# 测试
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 其他
+*.md
+!README.md

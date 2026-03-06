@@ -1,0 +1,15 @@
+# CAN Parser Tools - Python依赖项
+# 安装: pip install -r requirements.txt
+
+# CAN数据库解析
+cantools>=38.0.0
+
+# 数据处理
+pandas>=1.3.0
+
+# Excel文件读取
+xlrd>=2.0.0        # 支持.xls格式
+openpyxl>=3.0.0    # 支持.xlsx格式
+
+# 编码检测（可选，用于智能编码识别）
+chardet>=4.0.0
