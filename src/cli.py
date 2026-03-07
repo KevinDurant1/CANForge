@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from dbc_loader import DBCLoader
 from asc_parser import ASCParser
 from excel_to_dbc import ExcelToDBCConverter
-from signal_validator import main as validator_main
+from validator import CANValidator
 
 
 def cleanup_pycache():
@@ -112,6 +112,7 @@ def save_errors_to_csv(error_messages, output_file):
 def cmd_parse(args):
     """解析ASC文件"""
     asc_file = args.asc_file
+    auto_validate = args.validate
     
     # 自动生成输出文件名
     if args.output:
@@ -139,20 +140,97 @@ def cmd_parse(args):
     messages, error_messages = parser.parse_file(asc_file)
     
     if messages:
-        # 3. 保存结果
+        # 3. 保存解码结果
         save_to_csv(messages, output_file)
         
-        # 4. 保存错误
+        # 4. 保存解析错误
         if error_messages:
             error_output_file = f"{output_file.rsplit('.', 1)[0]}_errors.csv"
             save_errors_to_csv(error_messages, error_output_file)
+        
+        # 5. 自动验证（如果启用）
+        if auto_validate and os.path.exists(output_file):
+            print("\n" + "=" * 60)
+            print("自动验证解析结果...")
+            print("=" * 60)
+            
+            validator = CANValidator(quick_mode=False)  # 使用完整验证模式
+            if validator.load_dbc_files():
+                validator.process_csv_file(output_file)
+                
+                # 快速验证
+                match_count, mismatch_count, skip_count, error_count = validator.print_quick_validation()
+                
+                # 范围验证
+                valid_count, invalid_count = validator.print_range_validation()
+                
+                # 自动生成验证报告
+                report_file = output_file.replace('.csv', '_validation_report.csv')
+                validator.export_report(report_file)
+                
+                # 自动生成验证错误报告
+                error_report_file = output_file.replace('.csv', '_validation_errors.csv')
+                validator.export_error_report(error_report_file)
+                
+                print("\n" + "=" * 60)
+                print("生成的文件:")
+                print("=" * 60)
+                print(f"1. 解码结果: {output_file}")
+                if error_messages:
+                    print(f"2. 解析错误: {error_output_file}")
+                print(f"3. 验证报告: {report_file}")
+                print(f"4. 验证错误: {error_report_file}")
+            else:
+                print("警告: 无法加载DBC文件进行验证")
 
 
 def cmd_validate(args):
     """验证解析结果"""
-    # 设置sys.argv以便validator_main可以读取
-    sys.argv = ['validate', args.csv_file]
-    validator_main()
+    csv_file = args.csv_file
+    quick_mode = args.quick
+    full_mode = args.full
+    
+    if not os.path.exists(csv_file):
+        print(f"错误: 文件 {csv_file} 不存在")
+        return 1
+    
+    # 创建验证器
+    validator = CANValidator(quick_mode=quick_mode)
+    
+    # 加载DBC文件
+    if not validator.load_dbc_files():
+        print("错误: 未能加载任何DBC文件")
+        return 1
+    
+    # 处理CSV文件
+    validator.process_csv_file(csv_file)
+    
+    # 快速验证
+    match_count, mismatch_count, skip_count, error_count = validator.print_quick_validation()
+    
+    # 范围验证（非快速模式）
+    invalid_count = 0
+    if not quick_mode:
+        valid_count, invalid_count = validator.print_range_validation()
+        
+        # 导出报告（完整模式）
+        if full_mode:
+            report_file = csv_file.replace('.csv', '_validation_report.csv')
+            validator.export_report(report_file)
+            
+            # 导出错误报告
+            error_report_file = csv_file.replace('.csv', '_validation_errors.csv')
+            validator.export_error_report(error_report_file)
+    
+    # 返回状态码
+    return 1 if mismatch_count > 0 or error_count > 0 or invalid_count > 0 else 0
+
+
+def cmd_validate_range(args):
+    """验证信号范围（已废弃，使用 validate 命令）"""
+    print("注意: validate-range 命令已合并到 validate 命令")
+    print("请使用: python3 src/cli.py validate <csv_file>")
+    return 1
 
 
 def cmd_convert(args):
@@ -194,8 +272,17 @@ def main():
   # 解析ASC文件
   python3 src/cli.py parse msg/chassis.asc
   
-  # 验证解析结果
+  # 解析并自动验证
+  python3 src/cli.py parse msg/chassis.asc --validate
+  
+  # 快速验证（仅验证唯一CAN ID）
+  python3 src/cli.py validate msg/chassis_decoded.csv --quick
+  
+  # 完整验证（包含范围检查）
   python3 src/cli.py validate msg/chassis_decoded.csv
+  
+  # 完整验证并生成报告
+  python3 src/cli.py validate msg/chassis_decoded.csv --full
   
   # Excel转DBC
   python3 src/cli.py convert
@@ -209,11 +296,14 @@ def main():
     parse_parser = subparsers.add_parser('parse', help='解析ASC文件')
     parse_parser.add_argument('asc_file', help='ASC文件路径')
     parse_parser.add_argument('-o', '--output', help='输出CSV文件路径')
+    parse_parser.add_argument('-v', '--validate', action='store_true', help='解析后自动验证')
     parse_parser.set_defaults(func=cmd_parse)
     
     # validate子命令
     validate_parser = subparsers.add_parser('validate', help='验证解析结果')
     validate_parser.add_argument('csv_file', help='CSV文件路径')
+    validate_parser.add_argument('--quick', action='store_true', help='快速验证（仅验证唯一CAN ID）')
+    validate_parser.add_argument('--full', action='store_true', help='完整验证并生成报告')
     validate_parser.set_defaults(func=cmd_validate)
     
     # convert子命令
