@@ -1,4 +1,4 @@
-# CAN Parser Tools - Python依赖项
+# CANForge - Python依赖项
 # 安装: pip install -r requirements.txt
 
 # CAN数据库解析

@@ -1,0 +1,1218 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: AD VCU Tbox
+
+
+BO_ 932 Vehicle_Mileage2: 8 VCU
+ SG_ Vehicle_Mileage2_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+ SG_ Vehicle_TRIP1 : 32|28@1+ (1,0) [0|268435455] "cm"  AD
+ SG_ Vehicle_Remote_Mileage1 : 0|20@1+ (0.1,0) [0|104857.5] "km"  AD
+
+BO_ 931 Vehicle_Mileage1: 8 VCU
+ SG_ Vehicle_Mileage1_MsgCntr : 48|4@1+ (1,0) [0|15] ""  AD
+ SG_ Vchicle_AD_Mileage1 : 24|24@1+ (0.1,0) [0|1677721.5] "km"  AD
+ SG_ Vehicle_ODO1 : 0|24@1+ (0.1,0) [0|1677721.5] "km"  AD
+
+BO_ 689 BMS_2B1h: 8 VCU
+ SG_ BMS_Battery_Capacity_Kwh : 16|16@1+ (0.01,0) [0|65535] "Kwh"  AD
+ SG_ BMS_Battery_Capacity_Ah : 48|10@1+ (1,0) [0|1023] "Ah"  AD
+ SG_ BMS_HVBatLowestTemCellNum : 32|8@1+ (1,0) [0|250] ""  AD
+ SG_ BMS_HVBatLowestTem : 0|8@1+ (1,-40) [-40|125] "℃"  AD
+ SG_ BMS_HVBatHighestTemCellNum : 40|8@1+ (1,0) [0|250] ""  AD
+ SG_ BMS_HVBatHighestTem : 8|8@1+ (1,-40) [-40|125] "℃"  AD
+
+BO_ 673 BMS_2A1h: 8 VCU
+ SG_ BMS_HVBatCellVolDiff : 48|16@1+ (1,0) [0|65535] ""  AD
+ SG_ BMS_HVBatHighestVolCellNum : 40|8@1+ (1,0) [0|250] ""  AD
+ SG_ BMS_HVBatLowestVolCellNum : 32|8@1+ (1,0) [0|250] ""  AD
+ SG_ BMS_HVBatHighestCellVol : 16|16@1+ (1,0) [0|5000] "mV"  AD
+ SG_ BMS_HVBatLowestCellVol : 0|16@1+ (1,0) [0|5000] "mV"  AD
+
+BO_ 160 BMS_A0h: 8 VCU
+ SG_ BMS_HVDisplaySOH : 56|8@1+ (1,0) [0|100] "%"  AD
+ SG_ BMS_Sys_Flt : 48|8@1+ (1,0) [0|255] ""  AD
+ SG_ BMS_Charge_StsCc : 44|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_Charge_StsCc2 : 43|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_Sys_Sts : 40|3@1+ (1,0) [0|7] ""  AD
+ SG_ BMS_HVBatSOC : 32|8@1+ (0.4,0) [0|100] "%"  AD
+ SG_ BMS_HVBatCrnt : 0|16@1+ (0.1,-1000) [-1000|1000] "A"  AD
+ SG_ BMS_HVBatVol : 16|16@1+ (0.1,0) [0|1000] "V"  AD
+
+BO_ 782 VCU_Vehicle_Error_Status: 8 VCU
+ SG_ VCU_Meter_flgWarningCode : 48|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_Meter_ChargeSt : 49|3@1+ (1,0) [0|7] ""  AD
+ SG_ VCU_30E_RollingCounter : 52|4@1+ (1,0) [0|15] ""  AD
+ SG_ VCU_30E_Checksum : 56|8@1+ (1,0) [0|255] ""  AD
+ SG_ Charge_Abnormal : 25|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_MeterSOCCal : 40|8@1+ (1,0) [0|100] "%"  AD
+ SG_ VCU_LowBattVolt : 16|8@1+ (0.1,0) [6|15] "V"  AD
+ SG_ VCU_PwrSt : 14|2@1+ (1,0) [0|3] ""  AD
+ SG_ VCU_CAN2_Fault : 35|3@1+ (1,0) [0|7] ""  AD
+ SG_ VCU_CAN1_Fault : 32|3@1+ (1,0) [0|7] ""  AD
+ SG_ VCU_CAN0_Fault : 29|3@1+ (1,0) [0|7] ""  AD
+ SG_ VCU_PwrCtrl_Fault : 26|3@1+ (1,0) [0|7] ""  AD
+ SG_ VCU_EPBActinWhenEBSMF : 12|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_EEPROM_Fault : 10|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_EBSActinWhenEPBMF : 11|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_Error_Code : 0|10@1+ (1,0) [0|999] ""  AD
+
+BO_ 1811 TPMS_Status: 8 VCU
+ SG_ ID_Match_State : 32|2@1+ (1,0) [0|3] ""  AD
+ SG_ Hight_Temperature_Warning : 38|2@1+ (1,0) [0|3] ""  AD
+ SG_ Sensor_state : 36|2@1+ (1,0) [0|3] ""  AD
+ SG_ Sensor_Power_State : 56|2@1+ (1,0) [0|3] ""  AD
+ SG_ Pressure_Warning : 61|2@1+ (1,0) [0|3] ""  AD
+ SG_ Pressure_Unbalance : 58|2@1+ (1,0) [0|3] ""  AD
+ SG_ Tire_Temperature : 24|8@1+ (1,-55) [-55|200] "℃"  AD
+ SG_ Tire_Pressure : 8|16@1+ (0.1,0) [0|2000] "Kpa"  AD
+ SG_ Tire_Num : 0|8@1+ (1,0) [0|255] ""  AD
+ SG_ Tire_Leak_State : 34|2@1+ (1,0) [0|3] ""  AD
+
+BO_ 930 Vehicle_Odometer_Status: 8 VCU
+ SG_ Vehicle_Odometer_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+ SG_ Vehicle_AD_Mileage : 42|18@1+ (0.8,0) [0|209714.4] "km"  AD
+ SG_ Vehicle_Remote_Mileage : 30|12@1+ (0.8,0) [0|3276] "km"  AD
+ SG_ Vehicle_TRIP : 18|12@1+ (0.8,0) [0|3276] "km"  AD
+ SG_ Vehicle_ODO : 0|18@1+ (0.8,0) [0|209714.4] "km"  AD
+
+BO_ 778 VCU_Vehicle_HVBat_Status: 8 VCU
+ SG_ Vehicle_Poweroff_Channel : 56|4@1+ (1,0) [0|0] ""  AD
+ SG_ Vehicle_Poweroff_Countdown_Time : 2|6@1+ (1,0) [0|63] "秒"  AD
+ SG_ Battery_Work_State : 0|2@1+ (1,0) [0|3] ""  AD
+ SG_ Vehicle_Soc : 48|8@1+ (1,0) [0|100] "%"  AD
+ SG_ Vehicle_HVBat_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+ SG_ High_Voltage_Battery_Voltage : 24|16@1+ (0.1,0) [0|1000] "V"  AD
+ SG_ High_Voltage_Battery_MaxTem : 40|8@1+ (1,-40) [-40|210] "℃"  AD
+ SG_ High_Voltage_Battery_Current : 8|16@1+ (0.1,-1000) [-1000|1000] "A"  AD
+
+BO_ 777 VCU_RR_Wheel_Status: 8 VCU
+ SG_ RR_WhlDir : 8|2@1+ (1,0) [0|3] ""  AD
+ SG_ RR_WhlSpdSensErr : 56|4@1+ (1,0) [0|15] ""  AD
+ SG_ RR_Slip_Flag : 3|1@1+ (1,0) [0|1] ""  AD
+ SG_ RR_SensorType : 0|1@1+ (1,0) [0|1] ""  AD
+ SG_ RR_Valid_Flag : 2|1@1+ (1,0) [0|1] ""  AD
+ SG_ RR_Tire_Leak_State : 4|1@1+ (1,0) [0|1] ""  AD
+ SG_ RR_Wheel_Status_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+ SG_ RR_Tire_Temperature : 48|8@1+ (1,-55) [-55|200] "℃"  AD
+ SG_ RR_Tire_Pressure : 16|16@1+ (0.1,0) [0|500] "Kpa"  AD
+ SG_ RR_Sensor_state : 7|1@1+ (1,0) [0|1] ""  AD
+ SG_ RR_Pressure_Warning : 5|2@1+ (1,0) [0|3] ""  AD
+ SG_ RR_WhlSpd : 32|16@1+ (0.01,0) [0|60] "km/h"  AD
+
+BO_ 775 VCU_FR_Wheel_Status: 8 VCU
+ SG_ FR_WhlDir : 8|2@1+ (1,0) [0|3] ""  AD
+ SG_ FR_WhlSpdSensErr : 56|4@1+ (1,0) [0|15] ""  AD
+ SG_ FR_SensorType : 0|1@1+ (1,0) [0|1] ""  AD
+ SG_ FR_Valid_Flag : 2|1@1+ (1,0) [0|1] ""  AD
+ SG_ FR_Tire_Leak_State : 4|1@1+ (1,0) [0|1] ""  AD
+ SG_ FR_Pressure_Warning : 5|2@1+ (1,0) [0|3] ""  AD
+ SG_ FR_Wheel_Status_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+ SG_ FR_Tire_Temperature : 48|8@1+ (1,-55) [-55|200] "℃"  AD
+ SG_ FR_Tire_Pressure : 16|16@1+ (0.1,0) [0|500] "Kpa"  AD
+ SG_ FR_Sensor_state : 7|1@1+ (1,0) [0|1] ""  AD
+ SG_ FR_WhlSpd : 32|16@1+ (0.01,0) [0|60] "km/h"  AD
+
+BO_ 776 VCU_RL_Wheel_Status: 8 VCU
+ SG_ RL_WhlDir : 8|2@1+ (1,0) [0|3] ""  AD
+ SG_ RL_WhlSpdSensErr : 56|4@1+ (1,0) [0|15] ""  AD
+ SG_ RL_Slip_Flag : 3|1@1+ (1,0) [0|1] ""  AD
+ SG_ RL_SensorType : 0|1@1+ (1,0) [0|1] ""  AD
+ SG_ RL_Valid_Flag : 2|1@1+ (1,0) [0|1] ""  AD
+ SG_ RL_Pressure_Warning : 5|2@1+ (1,0) [0|3] ""  AD
+ SG_ RL_Tire_Temperature : 48|8@1+ (1,-55) [-55|200] "℃"  AD
+ SG_ RL_Tire_Pressure : 16|16@1+ (0.1,0) [0|500] "Kpa"  AD
+ SG_ RL_Sensor_state : 7|1@1+ (1,0) [0|1] ""  AD
+ SG_ RL_Tire_Leak_State : 4|1@1+ (1,0) [0|1] ""  AD
+ SG_ RL_WhlSpd : 32|16@1+ (0.01,0) [0|60] "km/h"  AD
+ SG_ RL_Wheel_Status_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+
+BO_ 774 VCU_FL_Wheel_Status: 8 VCU
+ SG_ FL_WhlDir : 8|2@1+ (1,0) [0|3] ""  Tbox
+ SG_ FL_WhlSpdSensErr : 56|4@1+ (1,0) [0|15] ""  AD
+ SG_ FL_SensorType : 0|1@1+ (1,0) [0|1] ""  AD
+ SG_ FL_Valid_Flag : 2|1@1+ (1,0) [0|1] ""  AD
+ SG_ FL_Sensor_state : 7|1@1+ (1,0) [0|1] ""  AD
+ SG_ FL_Tire_Temperature : 48|8@1+ (1,-55) [-55|200] "℃"  AD
+ SG_ FL_Pressure_Warning : 5|2@1+ (1,0) [0|3] ""  AD
+ SG_ FL_Tire_Leak_State : 4|1@1+ (1,0) [0|1] ""  AD
+ SG_ FL_Tire_Pressure : 16|16@1+ (0.1,0) [0|500] "Kpa"  AD
+ SG_ FL_WhlSpd : 32|16@1+ (0.01,0) [0|60] "km/h"  AD
+ SG_ FL_Wheel_Status_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+
+BO_ 771 VCU_Vehicle_Status_1: 8 VCU
+ SG_ VCU_303_RollingCounter : 52|4@1+ (1,0) [0|15] ""  AD
+ SG_ VCU_303_Checksum : 56|8@1+ (1,0) [0|255] ""  AD
+ SG_ Vehicle_Range : 8|10@1+ (1,0) [0|1023] "Km"  AD
+ SG_ Drive_Mode_State : 4|4@1+ (1,0) [0|15] ""  AD
+ SG_ EPB_Status : 3|1@1+ (1,0) [0|1] ""  AD
+ SG_ Accelerator_Pedal_Status : 40|8@1+ (1,0) [0|100] "%"  AD
+ SG_ Brake_Pedal_Status : 32|8@1+ (1,0) [0|100] "%"  AD
+ SG_ Vehicle_Gear : 0|2@1+ (1,0) [0|3] ""  AD
+
+BO_ 772 VCU_Vehicle_Status_2: 8 VCU
+ SG_ VCU_304_RollingCounter : 52|4@1+ (1,0) [0|15] ""  AD
+ SG_ VCU_304_Checksum : 56|8@1+ (1,0) [0|255] ""  AD
+ SG_ Vehicle_Speed_Vaild : 48|1@1+ (1,0) [0|1] ""  AD
+ SG_ Vehicle_Steering_Angle : 32|16@1+ (0.1,-35) [-35|35] "deg"  AD
+ SG_ Vehicle_Brake_Pressure : 16|16@1+ (0.01,0) [0|10] "Mpa"  AD
+ SG_ Vehicle_Speed : 0|16@1+ (0.1,-80) [-80|80] "km/h"  AD
+
+BO_ 769 VCU_Vehicle_Diagnosis: 8 VCU
+ SG_ VCU_ADOTAFlag : 39|1@1+ (1,0) [0|1] ""  AD
+ SG_ Clean_Fan_Flag : 51|1@1+ (1,0) [0|1] ""  AD
+ SG_ Slip_Flag : 49|1@1+ (1,0) [0|1] ""  AD
+ SG_ MaxHVBatCellVolDiffFLg : 58|1@1+ (1,0) [0|1] ""  AD
+ SG_ Horn_2_State : 43|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_VehRdy : 37|1@1+ (1,0) [0|1] ""  AD
+ SG_ ADS_Light_State : 35|1@1+ (1,0) [0|1] ""  AD
+ SG_ KERS_Limited : 56|1@1+ (1,0) [0|1] ""  AD
+ SG_ Oil_pot_State : 4|1@1+ (1,0) [0|1] ""  AD
+ SG_ Business_Relay_State : 31|1@1+ (1,0) [0|1] ""  AD
+ SG_ Relay_4G_State : 30|1@1+ (1,0) [0|1] ""  AD
+ SG_ Radar_Relay_State : 29|1@1+ (1,0) [0|1] ""  AD
+ SG_ Orin_Relay_State : 28|1@1+ (1,0) [0|1] ""  AD
+ SG_ Motor_Temp_State : 27|1@1+ (1,0) [0|1] ""  AD
+ SG_ Fog_Light_state : 11|1@1+ (1,0) [0|1] ""  AD
+ SG_ Power_Button_State : 2|1@1+ (1,0) [0|1] ""  AD
+ SG_ EPB_Button_State : 3|1@1+ (1,0) [0|1] ""  AD
+ SG_ Motor_AccLimited : 8|1@1+ (1,0) [0|1] ""  AD
+ SG_ B_Press_Switch_Collision_State : 26|1@1+ (1,0) [0|1] ""  AD
+ SG_ Remo_Touch_Switch_Disable_State : 24|1@1+ (1,0) [0|1] ""  AD
+ SG_ F_Press_Switch_Collision_State : 25|1@1+ (1,0) [0|1] ""  AD
+ SG_ B_Touch_Switch_Disable_State : 21|1@1+ (1,0) [0|1] ""  AD
+ SG_ L_Touch_Switch_Disable_State : 22|1@1+ (1,0) [0|1] ""  AD
+ SG_ R_Touch_Switch_Disable_State : 23|1@1+ (1,0) [0|1] ""  AD
+ SG_ F_Touch_Switch_Disable_State : 20|1@1+ (1,0) [0|1] ""  AD
+ SG_ R_Touch_Switch_Collision_State : 19|1@1+ (1,0) [0|1] ""  AD
+ SG_ L_Touch_Switch_Collision_State : 18|1@1+ (1,0) [0|1] ""  AD
+ SG_ AD_FaultCode : 52|4@1+ (1,0) [0|15] ""  AD
+ SG_ EPB_Diagnosis : 14|1@1+ (1,0) [0|1] ""  AD
+ SG_ Move_Switch : 47|1@1+ (1,0) [0|1] ""  AD
+ SG_ LowBeam_State : 33|1@1+ (1,0) [0|1] ""  AD
+ SG_ Reversing_Lights_State : 34|1@1+ (1,0) [0|1] ""  AD
+ SG_ Tire_Sensor_State : 41|1@1+ (1,0) [0|1] ""  AD
+ SG_ Brake_Light_State : 42|1@1+ (1,0) [0|1] ""  AD
+ SG_ Vehicle_Fault_Grade : 16|2@1+ (1,0) [0|3] ""  AD
+ SG_ EPS_State : 10|1@1+ (1,0) [0|1] ""  AD
+ SG_ Vehicle_Diagnosis_MsgCntr : 60|4@1+ (1,0) [0|15] ""  AD
+ SG_ Horn_1_State : 40|1@1+ (1,0) [0|1] ""  AD
+ SG_ HighBeam_State : 15|1@1+ (1,0) [0|1] ""  AD
+ SG_ Right_Turn_Light_State : 48|1@1+ (1,0) [0|1] ""  AD
+ SG_ Left_Turn_Light_State : 32|1@1+ (1,0) [0|1] ""  AD
+ SG_ B_Touch_Switch_Collision_State : 13|1@1+ (1,0) [0|1] ""  AD
+ SG_ F_Touch_Switch_Collision_State : 12|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_State : 9|1@1+ (1,0) [0|1] ""  AD
+ SG_ Emergency_Button_State : 0|1@1+ (1,0) [0|1] ""  AD
+ SG_ DBS_State : 7|1@1+ (1,0) [0|1] ""  AD
+ SG_ AD_State : 6|1@1+ (1,0) [0|1] ""  AD
+ SG_ Remote_State : 5|1@1+ (1,0) [0|1] ""  AD
+ SG_ Motor_State : 1|1@1+ (1,0) [0|1] ""  AD
+
+BO_ 399 EPS_Status: 8 VCU
+ SG_ EPS_Fault_Code : 60|4@1+ (1,0) [0|15] ""  AD
+ SG_ EPS_Current : 40|8@1+ (1,-128) [-128|127] "A"  AD
+ SG_ EPS_Fault_Grade : 56|4@1+ (1,0) [0|255] ""  AD
+ SG_ EPS_Temperature : 48|8@1+ (1,-128) [-128|127] "℃"  AD
+ SG_ EPS_Angle_Spd : 24|16@1+ (1,0) [50|800] "rpm/s"  AD
+ SG_ EPS_Calibration_Status : 5|1@1+ (1,0) [0|1] ""  AD
+ SG_ EPS_StrAngle_Act : 8|16@1+ (1,-500) [-500|500] "deg"  AD
+ SG_ EPS_Fault : 6|1@1+ (1,0) [0|1] "Nm"  AD
+ SG_ EPS_Work_Mode_Status : 7|1@1+ (1,0) [0|1] ""  AD
+
+BO_ 788 VCU_EPS_Req: 8 VCU
+ SG_ VCU_Request_EPS_Angle_Speed : 24|16@1+ (1,0) [50|800] "deg/s"  AD
+ SG_ VCU_Request_EPS_Angle_Calibrate : 5|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_Req_EPS_Target_Angle : 8|16@1+ (1,-500) [-500|500] "deg"  AD
+ SG_ VCU_EPS_CtrlEnable : 7|1@1+ (1,0) [0|1] ""  AD
+
+BO_ 267 Remote_Control_Shake: 8 VCU
+ SG_ Remote_X1 : 48|16@1+ (1,-450) [-450|450] ""  AD
+ SG_ Remote_Y1 : 32|16@1+ (1,-450) [-450|450] ""  AD
+ SG_ Remote_Y2 : 16|16@1+ (1,-450) [-450|450] ""  AD
+ SG_ Remote_X2 : 0|16@1+ (1,-450) [-450|450] ""  AD
+
+BO_ 266 Remote_Control_IO: 8 VCU
+ SG_ Remote_A : 16|8@1+ (1,0) [0|2] ""  AD
+ SG_ Remote_D : 40|8@1+ (1,0) [0|2] ""  AD
+ SG_ Remote_C : 32|8@1+ (1,0) [0|2] ""  AD
+ SG_ Remote_B : 24|8@1+ (1,0) [0|2] ""  AD
+ SG_ Remote_F : 8|8@1+ (1,0) [0|2] ""  AD
+ SG_ Remote_E : 0|8@1+ (1,0) [0|2] ""  AD
+
+BO_ 886 EPB_Status: 8 VCU
+ SG_ EPB_MANUAL_PARKING_KEY : 24|8@1+ (1,0) [0|0] ""  AD
+ SG_ EPB_FINAL_STATES_R : 8|8@1+ (1,0) [0|0] ""  AD
+ SG_ EPB_FINAL_STATES_L : 0|8@1+ (1,0) [0|0] ""  AD
+ SG_ EPB_FAULT : 16|8@1+ (1,0) [0|0] ""  AD
+
+BO_ 785 VCU_EPB_Req: 8 VCU
+ SG_ VCU_EPB_Parking_Request_R : 0|8@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_EPB_Parking_Request_L : 8|8@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_EPB_Parking_Request_ALL : 16|8@1+ (1,0) [0|0] ""  AD
+ SG_ VCU_EPB_Parking_Flag_R : 24|8@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_EPB_Parking_Flag_L : 32|8@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_EPB_Parking_Flag_ALL : 40|8@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_EPB_Clamping_force_R : 48|8@1+ (100,0) [5000|15000] ""  AD
+ SG_ VCU_EPB_Clamping_force_L : 56|8@1+ (100,0) [5000|15000] ""  AD
+
+BO_ 2040 VCU_Version: 8 VCU
+ SG_ ChassisModel : 47|5@1+ (1,0) [0|31] ""  AD
+ SG_ Day : 56|6@1+ (1,0) [0|31] "日"  AD
+ SG_ Month : 52|4@1+ (1,0) [0|12] "月"  AD
+ SG_ Year : 40|7@1+ (1,0) [0|127] "年"  AD
+ SG_ Byte5 : 32|8@1+ (1,0) [0|255] ""  AD
+ SG_ Byte4 : 24|8@1+ (1,0) [0|255] ""  AD
+ SG_ Byte3 : 16|8@1+ (1,0) [0|255] ""  AD
+ SG_ Byte2 : 8|8@1+ (1,0) [0|255] ""  AD
+ SG_ Byte1 : 0|8@1+ (1,0) [0|255] ""  AD
+
+BO_ 780 VCU_Vehicle_PwrCtrl_Status: 8 VCU
+ SG_ VCU_Power_St : 21|3@1+ (1,0) [0|7] ""  Tbox
+ SG_ VCU_SleepSig : 24|4@1+ (1,0) [0|15] ""  AD
+ SG_ VCU_BTVersion2 : 48|8@1+ (1,0) [0|255] ""  AD
+ SG_ VCU_BTVersion1 : 40|8@1+ (1,0) [0|255] ""  AD
+ SG_ VCU_ABSoftSt : 19|2@1+ (1,0) [0|3] ""  Tbox
+ SG_ VCU_CP_Sts : 17|2@1+ (1,0) [0|3] ""  AD
+ SG_ VCU_OTA_Flag : 16|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_LVMuteChargeSt : 12|3@1+ (1,0) [0|7] ""  AD
+ SG_ VCU_PwrDownSt : 8|3@1+ (1,0) [0|7] ""  AD
+ SG_ VCU_PUM_FSM_Pointer : 32|6@1+ (1,0) [0|63] ""  AD
+ SG_ VCU_VehRdyDiagEnable : 7|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_LowBattVolt : 56|8@1+ (0.1,0) [6|15] "V"  AD
+ SG_ VCU_LVPwrActReq : 5|2@1+ (1,0) [0|3] ""  AD
+ SG_ VCU_HVPwrActReq : 3|2@1+ (1,0) [0|3] ""  AD
+ SG_ VCU_WeakUpSig : 0|3@1+ (1,0) [0|7] ""  AD
+
+BO_ 323 DBS_Status2: 8 VCU
+ SG_ DBS_Angle : 40|16@1+ (0.1,0) [0|6553.5] ""  AD
+ SG_ DBS_ActualReactPress : 32|8@1+ (0.1,0) [0|12] "Mpa"  AD
+ SG_ DBS_CheckSum : 56|8@1+ (1,0) [0|255] ""  AD
+ SG_ DBS_WaringCode_143 : 24|8@1+ (1,0) [0|16777215] ""  AD
+ SG_ DBS_FaultCode : 0|24@1+ (1,0) [0|16777215] ""  AD
+
+BO_ 322 DBS_Status: 8 VCU
+ SG_ DBS_BrakePressureReqACK : 16|8@1+ (1,0) [0|1] ""  AD
+ SG_ DBS_EstopFlag : 54|1@1+ (1,0) [0|1] ""  AD
+ SG_ DBS_PedaiFlag : 55|1@1+ (1,0) [0|1] ""  AD
+ SG_ DBS_Ref_Iq : 40|8@1+ (0.5,-20) [-20|107.5] ""  AD
+ SG_ DBS_Work_Mode : 8|8@1+ (1,0) [0|3] ""  AD
+ SG_ DBS_RollingCounter : 48|4@1+ (1,0) [0|15] ""  AD
+ SG_ DBS_Park_Warning : 6|2@1+ (1,0) [0|1] ""  AD
+ SG_ DBS_PeadalOpening : 32|8@1+ (1,0) [0|100] "%"  AD
+ SG_ DBS_CheckSum : 56|8@1+ (1,0) [0|255] ""  AD
+ SG_ DBS_HP_pressure : 24|8@1+ (0.1,0) [0|12] "Mpa"  AD
+ SG_ DBS_System_Status : 0|2@1+ (1,0) [0|3] ""  AD
+
+BO_ 340 VCU_DBS_Req: 8 VCU
+ SG_ VCU_DBS_PwrOff : 34|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_DBS_SoftReset : 33|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_DBS_SpeedFlag : 32|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_DBS_Work_Mode : 8|8@1+ (1,0) [0|3] ""  AD
+ SG_ VCU_DBS_Pressure_Request : 16|8@1+ (0.1,0) [0|12] "Mpa"  AD
+ SG_ VCU_DBS_Request_Flag : 0|8@1+ (1,0) [0|1] ""  AD
+
+BO_ 16 MCU_DrvMotSt: 8 VCU
+ SG_ Motor_ActIdc : 36|12@1+ (1,0) [0|1000] "A"  AD
+ SG_ Motor_ActSpeed : 2|18@1+ (1,-10000) [-10000|10000] "rpm"  AD
+ SG_ Motor_ActDir : 0|2@1+ (1,0) [0|0] ""  VCU
+ SG_ Motor_ActTorque : 20|16@1+ (0.1,-1000) [-1000|5553.5] "Nm"  AD
+ SG_ Motor_FalutCode : 56|8@1+ (1,0) [0|255] ""  AD
+ SG_ Motor_Temp : 48|8@1+ (1,-50) [-50|205] "℃"  AD
+
+BO_ 352 VCU_MCU_Req: 8 VCU
+ SG_ VCU_stMovDir : 6|2@1+ (1,0) [0|4] ""  AD
+ SG_ VCU_SoftReset : 5|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_ActiveHVReleaseReq : 4|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_MotNegSpdLmt : 46|6@1+ (150,-9000) [-9000|0] "rpm"  AD
+ SG_ VCU_MotNegTrqLmt : 58|6@1+ (5,-315) [-315|0] "N.m"  AD
+ SG_ VCU_ClampingBrakeReq : 3|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_VehHVReady : 0|1@1+ (1,0) [0|1] ""  AD
+ SG_ VCU_ModeReq : 1|2@1+ (1,0) [0|3] ""  AD
+ SG_ VCU_TargetSpdReq : 24|16@1+ (1,-7000) [-7000|8000] "rpm"  AD
+ SG_ VCU_MotPosSpdLmt : 40|6@1+ (150,0) [0|8000] "rpm"  AD
+ SG_ VCU_MotPosTrqLmt : 52|6@1+ (5,0) [0|315] "N.m"  AD
+ SG_ VCU_TargetTqReq : 8|16@1+ (0.1,-1000) [-1000|1000] "N.m"  AD
+
+BO_ 324 DBS_Status4: 8 VCU
+ SG_ DBS_WaringCode_144 : 0|16@1+ (1,0) [0|16777215] ""  AD
+ SG_ DBS_CheckSum : 56|8@1+ (1,0) [0|255] ""  AD
+ SG_ DBS_InputVoltage : 32|8@1+ (0.1,0) [0|25.5] ""  AD
+ SG_ DBS_MotorRpm : 40|16@1+ (1,0) [0|65535] ""  AD
+ SG_ DBS_PCBtemp : 24|8@1+ (1,-40) [-40|215] ""  AD
+
+BO_ 418 BMS_1A2h: 8 VCU
+ SG_ BMS_CP_Vol : 32|8@1+ (0.1,0) [0|0] ""  AD
+ SG_ BMS_CP : 24|8@1+ (1,0) [0|255] ""  AD
+ SG_ BMS_APlus : 8|8@1+ (0.1,0) [0|25.5] "V"  AD
+ SG_ BMS_CC_Sts : 6|2@1+ (1,0) [0|3] ""  AD
+ SG_ BMS_CP_Sts : 5|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_S2_Sts : 4|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_Charge_Relay_Sts : 51|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_AcDc_Relay_Sts : 52|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_WeakUpSig : 0|4@1+ (1,0) [0|15] ""  AD
+ SG_ BMS_KeyOn : 16|8@1+ (0.1,0) [0|25.5] "V"  AD
+ SG_ BMS_Req_HvDown : 40|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_SelfChk_Sts : 43|3@1+ (1,0) [0|7] ""  AD
+ SG_ BMS_Heat_Relay_Sts : 46|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_Precharge_Sts : 49|2@1+ (1,0) [0|3] ""  AD
+ SG_ BMS_Charge_Sts : 53|3@1+ (1,0) [0|7] ""  AD
+ SG_ BMS_Heart_Beat : 56|4@1+ (1,0) [0|15] ""  AD
+ SG_ BMS_Precharge_Relay_Sts : 48|1@1+ (1,0) [0|1] ""  AD
+ SG_ BMS_Parent_Relay_Sts : 47|1@1+ (1,0) [0|1] ""  AD
+
+
+
+CM_ BO_ 932 "VCU里程计反馈";
+CM_ SG_ 932 Vehicle_Mileage2_MsgCntr "里程2心跳计数：周期0-15";
+CM_ SG_ 932 Vehicle_TRIP1 "小计里程（精度1cm）";
+CM_ SG_ 932 Vehicle_Remote_Mileage1 "遥控模式下的行驶里程（精度0.1）";
+CM_ BO_ 931 "VCU里程计反馈";
+CM_ SG_ 931 Vehicle_Mileage1_MsgCntr "里程1心跳计数：周期0——15";
+CM_ SG_ 931 Vchicle_AD_Mileage1 "车辆自动驾驶行驶里（精度0.1）";
+CM_ SG_ 931 Vehicle_ODO1 "车辆行驶里程（精度0.1）";
+CM_ BO_ 689 "本消息由VCU转发自子部件";
+CM_ SG_ 689 BMS_Battery_Capacity_Kwh "Battery Capacity电池总容量";
+CM_ SG_ 689 BMS_Battery_Capacity_Ah "Battery Capacity电池Ah容量";
+CM_ SG_ 689 BMS_HVBatLowestTemCellNum "High Voltage Battery Lowest Temperature Cell Number
+有效值范围 1～250 
+0xFE：异常 0xFF：无效";
+CM_ SG_ 689 BMS_HVBatLowestTem "High Voltage Battery Lowest Temperature";
+CM_ SG_ 689 BMS_HVBatHighestTemCellNum "High Voltage Battery highest Temperature Cell Number
+有效值范围 1～250 
+ 0xFE：异常 0xFF：无效";
+CM_ SG_ 689 BMS_HVBatHighestTem "High Voltage Battery highest Temperature";
+CM_ BO_ 673 "本消息由VCU转发自子部件";
+CM_ SG_ 673 BMS_HVBatCellVolDiff "High Voltage Battery Cell Voltage Difference";
+CM_ SG_ 673 BMS_HVBatHighestVolCellNum "0x0-0xFF:Cell Number";
+CM_ SG_ 673 BMS_HVBatLowestVolCellNum "0x0-0xFF:Cell Number";
+CM_ SG_ 673 BMS_HVBatHighestCellVol "High Voltage Battery highest Cell Voltage";
+CM_ SG_ 673 BMS_HVBatLowestCellVol "High Voltage Battery Lowest Cell Voltage";
+CM_ BO_ 160 "本消息由VCU转发自子部件";
+CM_ SG_ 160 BMS_HVDisplaySOH "显示SOH";
+CM_ SG_ 160 BMS_Sys_Flt "故障代码 ";
+CM_ SG_ 160 BMS_Charge_StsCc "慢充连接状态
+0x00: connect
+0x01: disconect";
+CM_ SG_ 160 BMS_Charge_StsCc2 "快充连接状态
+0x00: connect
+0x01: disconect";
+CM_ SG_ 160 BMS_Sys_Sts "0x0:Normal 正常
+0x1:Level 1 Fault 一级故障(告警) 
+0x2：Level 2 Fault 二级故障（限功率）
+0x3：Level 3 Fault 三级故障（限功率为0，主动停机）
+";
+CM_ SG_ 160 BMS_HVBatSOC "High Voltage Battery State Of Charge
+高压电池SOC状态";
+CM_ SG_ 160 BMS_HVBatCrnt "High Voltage Battery Current
+高压电池当前电流";
+CM_ BO_ 782 "VCU车辆故障反馈";
+CM_ SG_ 782 Charge_Abnormal "充电异常（插枪异常）
+0：正常充电
+1：插枪异常";
+CM_ SG_ 782 VCU_MeterSOCCal "仪表隐藏SOC";
+CM_ SG_ 782 VCU_LowBattVolt "VCU AI28采集BATT电压结果";
+CM_ SG_ 782 VCU_PwrSt "车辆电池状态：
+0x01：底盘上电，高压不在线
+0x02：高压在线
+0x03：车辆下电";
+CM_ SG_ 782 VCU_CAN0_Fault "0-Active
+1-TxWarning
+2-RxWarning
+3-Warning
+4-TxPassive
+5-RxPassive
+6-Passive
+7-Bus Off";
+CM_ SG_ 782 VCU_PwrCtrl_Fault "0x00:电源管理无故障
+0x01:下电条件未满足
+0x02:重启条件未满足，表现为有限重启";
+CM_ SG_ 782 VCU_EPBActinWhenEBSMF "EBS故障，EPB介入标志位";
+CM_ SG_ 782 VCU_EEPROM_Fault "0x0:成功
+0x1:失败";
+CM_ SG_ 782 VCU_EBSActinWhenEPBMF "EPB故障，EBS介入标志位";
+CM_ SG_ 782 VCU_Error_Code "请查看故障列表";
+CM_ BO_ 1811 "本消息由VCU转发自子部件";
+CM_ SG_ 1811 ID_Match_State "ID学习标志
+0x0：正常匹配 
+0x1：未匹配 ";
+CM_ SG_ 1811 Hight_Temperature_Warning "高温报警标识
+0x0：正常 
+0x1：高温警告 ";
+CM_ SG_ 1811 Sensor_state "传感器丢失故障标识
+0x0：正常
+0x1：持续10分钟没有收到轮胎信号 ";
+CM_ SG_ 1811 Sensor_Power_State "传感器电池电量低标
+0x0：正常 
+0x1：电量低 ";
+CM_ SG_ 1811 Pressure_Warning "压力报警 
+0x0：正常
+0x1：胎压>=标准气压值*120%
+0x2：胎压<=标准气压值*75%";
+CM_ SG_ 1811 Pressure_Unbalance "同轴压力失衡
+0x0：正常
+0x1：压力失衡";
+CM_ SG_ 1811 Tire_Temperature "轮胎温度";
+CM_ SG_ 1811 Tire_Pressure "轮胎压力";
+CM_ SG_ 1811 Tire_Num "轮胎位置
+0对应左前，
+1对应右前，
+16对应左后，
+19 对应右后";
+CM_ SG_ 1811 Tire_Leak_State "快漏报警标识
+0x0：正常 
+0x1：泄露 ";
+CM_ BO_ 930 "VCU里程计反馈";
+CM_ SG_ 930 Vehicle_Odometer_MsgCntr "心跳周期0-15";
+CM_ SG_ 930 Vehicle_AD_Mileage "车辆AD模式下里程";
+CM_ SG_ 930 Vehicle_Remote_Mileage "车辆遥控模式下里程";
+CM_ SG_ 930 Vehicle_TRIP "车辆小里程";
+CM_ SG_ 930 Vehicle_ODO "车辆行驶总里程（km）";
+CM_ BO_ 778 "VCU高压反馈";
+CM_ SG_ 778 Vehicle_Poweroff_Channel "0x0：表示当前无下电动作；
+0x1：表示当前所有系统下电状态；
+其他状态预留";
+CM_ SG_ 778 Vehicle_Poweroff_Countdown_Time "延时5秒下电倒计时
+";
+CM_ SG_ 778 Battery_Work_State "0x0：未知
+0x1：充电
+0x2：能量回收
+0x3：正常放电";
+CM_ SG_ 778 Vehicle_Soc "车辆剩余电量%";
+CM_ SG_ 778 Vehicle_HVBat_MsgCntr "心跳周期0-15";
+CM_ SG_ 778 High_Voltage_Battery_Voltage "High Voltage Battery Voltage
+高压电池当前电压";
+CM_ SG_ 778 High_Voltage_Battery_MaxTem "高压电池最高实时温度";
+CM_ SG_ 778 High_Voltage_Battery_Current "High Voltage Battery Current
+高压电池当前电流，正为放电，负为充电";
+CM_ BO_ 777 "右后轮子状态";
+CM_ SG_ 777 RR_WhlDir "右后轮方向";
+CM_ SG_ 777 RR_WhlSpdSensErr "右后轮轮速传感器故障
+0x00:正常
+0x01:间隙大于2mm或者静止
+0x02:看门狗超时
+0x03:轮速传感器型号不匹配
+0x04:占空比不匹配
+0x05:采样错误
+0x06:阶跃超限
+0x07:最大速度超限
+0x08:占空比阶跃
+0x09:采样信号停滞
+0x0A:供电故障
+0x0B:占空比超限";
+CM_ SG_ 777 RR_Slip_Flag "右后轮打滑标志位";
+CM_ SG_ 777 RR_SensorType "0x0:普通型
+0x1:智慧型";
+CM_ SG_ 777 RR_Valid_Flag "右后轮轮速信号有效性标志位
+0：有效
+1：无效";
+CM_ SG_ 777 RR_Tire_Leak_State "快漏报警标识
+0：正常 
+1：泄露 
+";
+CM_ SG_ 777 RR_Wheel_Status_MsgCntr "心跳周期0-15";
+CM_ SG_ 777 RR_Tire_Temperature "轮胎温度";
+CM_ SG_ 777 RR_Tire_Pressure "RR轮胎压力";
+CM_ SG_ 777 RR_Sensor_state "胎压传感器丢失故障标识
+0：正常
+1：持续10分钟没有收到轮胎信号 
+";
+CM_ SG_ 777 RR_Pressure_Warning "压力报警 
+0：正常，
+1：胎压>=标准气压值*120%，
+2：胎压<=标准气压值*75%
+3：爆胎";
+CM_ SG_ 777 RR_WhlSpd "右后轮轮速";
+CM_ BO_ 775 "右前车轮状态";
+CM_ SG_ 775 FR_WhlDir "右前轮方向";
+CM_ SG_ 775 FR_WhlSpdSensErr "右前轮轮速传感器故障
+0x00:正常
+0x01:间隙大于2mm或者静止
+0x02:看门狗超时
+0x03:轮速传感器型号不匹配
+0x04:占空比不匹配
+0x05:采样错误
+0x06:阶跃超限
+0x07:最大速度超限
+0x08:占空比阶跃
+0x09:采样信号停滞
+0x0A:供电故障
+0x0B:占空比超限";
+CM_ SG_ 775 FR_SensorType "0x0:普通型
+0x1:智慧型";
+CM_ SG_ 775 FR_Valid_Flag "右左轮轮速信号有效性标志位
+0：有效
+1：无效";
+CM_ SG_ 775 FR_Tire_Leak_State "快漏报警标识
+0：正常 
+1：泄露 
+";
+CM_ SG_ 775 FR_Pressure_Warning "压力报警 
+0：正常，
+1：胎压>=标准气压值*120%，
+2：胎压<=标准气压值*75%
+3：爆胎";
+CM_ SG_ 775 FR_Wheel_Status_MsgCntr "心跳周期0-15";
+CM_ SG_ 775 FR_Tire_Temperature "轮胎温度";
+CM_ SG_ 775 FR_Tire_Pressure "FR轮胎压力";
+CM_ SG_ 775 FR_Sensor_state "胎压传感器丢失故障标识
+0：正常
+1：持续10分钟没有收到轮胎信号 
+";
+CM_ SG_ 775 FR_WhlSpd "右前轮轮速";
+CM_ BO_ 776 "左后轮子状态";
+CM_ SG_ 776 RL_WhlDir "左后轮方向";
+CM_ SG_ 776 RL_WhlSpdSensErr "左后轮轮速传感器故障
+0x00:正常
+0x01:间隙大于2mm或者静止
+0x02:看门狗超时
+0x03:轮速传感器型号不匹配
+0x04:占空比不匹配
+0x05:采样错误
+0x06:阶跃超限
+0x07:最大速度超限
+0x08:占空比阶跃
+0x09:采样信号停滞
+0x0A:供电故障
+0x0B:占空比超限";
+CM_ SG_ 776 RL_Slip_Flag "左后轮打滑标志位";
+CM_ SG_ 776 RL_SensorType "0x0:普通型
+0x1:智慧型";
+CM_ SG_ 776 RL_Valid_Flag "右左轮轮速信号有效性标志位
+0：有效
+1：无效";
+CM_ SG_ 776 RL_Pressure_Warning "压力报警 
+0：正常，
+1：胎压>=标准气压值*120%，
+2：胎压<=标准气压值*75%
+3：爆胎";
+CM_ SG_ 776 RL_Tire_Temperature "轮胎温度";
+CM_ SG_ 776 RL_Tire_Pressure "RL轮胎压力";
+CM_ SG_ 776 RL_Sensor_state "胎压传感器丢失故障标识
+0：正常
+1：持续10分钟没有收到轮胎信号 
+";
+CM_ SG_ 776 RL_Tire_Leak_State "快漏报警标识
+0：正常 
+1：泄露 
+";
+CM_ SG_ 776 RL_WhlSpd "左后轮轮速";
+CM_ SG_ 776 RL_Wheel_Status_MsgCntr "心跳周期0-15";
+CM_ BO_ 774 "左前车轮状态";
+CM_ SG_ 774 FL_WhlDir "左前轮方向";
+CM_ SG_ 774 FL_WhlSpdSensErr "左前轮轮速传感器故障
+0x00:正常
+0x01:间隙大于2mm或者静止
+0x02:看门狗超时
+0x03:轮速传感器型号不匹配
+0x04:占空比不匹配
+0x05:采样错误
+0x06:阶跃超限
+0x07:最大速度超限
+0x08:占空比阶跃
+0x09:采样信号停滞
+0x0A:供电故障
+0x0B:占空比超限";
+CM_ SG_ 774 FL_SensorType "0x0:普通型
+0x1:智慧型";
+CM_ SG_ 774 FL_Valid_Flag "左前轮轮速信号有效性标志位
+0：有效
+1：无效";
+CM_ SG_ 774 FL_Sensor_state "胎压传感器丢失故障标识
+0：正常
+1：持续10分钟没有收到轮胎信号 
+";
+CM_ SG_ 774 FL_Tire_Temperature "轮胎温度";
+CM_ SG_ 774 FL_Pressure_Warning "压力报警 
+0：正常，
+1：胎压>=标准气压值*120%，
+2：胎压<=标准气压值*75%
+3：爆胎";
+CM_ SG_ 774 FL_Tire_Leak_State "快漏报警标识
+0：正常 
+1：泄露 
+";
+CM_ SG_ 774 FL_Tire_Pressure "FL轮胎压力";
+CM_ SG_ 774 FL_WhlSpd "左前轮轮速";
+CM_ SG_ 774 FL_Wheel_Status_MsgCntr "心跳周期0-15";
+CM_ BO_ 772 "VCU车辆状态反馈";
+CM_ SG_ 772 Vehicle_Speed_Vaild "车辆速度可信标志位
+0x0:无效
+0x1:有效";
+CM_ SG_ 772 Vehicle_Steering_Angle "车辆轮端转角（左正右负），转向角速度（暂定）";
+CM_ SG_ 772 Vehicle_Brake_Pressure "车辆制动管路压力";
+CM_ SG_ 772 Vehicle_Speed "车辆速度km/h（负为倒车）";
+CM_ BO_ 769 "VCU车辆状态反馈";
+CM_ SG_ 769 VCU_ADOTAFlag "0x0：禁止自驾OTA
+0x1：运行自驾OTA";
+CM_ SG_ 769 Clean_Fan_Flag "清洁风机状态：
+0：未开启
+1：开启";
+CM_ SG_ 769 Slip_Flag "打滑标志位：
+0：未打滑
+1：打滑
+";
+CM_ SG_ 769 MaxHVBatCellVolDiffFLg "电池压差过大标志位";
+CM_ SG_ 769 Horn_2_State "0x0：车载大喇叭关
+0x1：车载大喇叭开";
+CM_ SG_ 769 ADS_Light_State "0x0：ADS灯反馈灭
+0x1：ADS灯亮";
+CM_ SG_ 769 KERS_Limited "0x0：能量回收无限制
+0x1：能量回收限制状态";
+CM_ SG_ 769 Oil_pot_State "制动油液信号
+0x0：油壶传感器油位正常
+0x1：不正常";
+CM_ SG_ 769 Business_Relay_State "业务子系统继电器控制状态
+0x1：正常连接
+0x0：不正常连接";
+CM_ SG_ 769 Relay_4G_State "4G子系统继电器状态
+0x0：不正常连接
+0x1：正常连接";
+CM_ SG_ 769 Radar_Relay_State "雷达子系统继电器状态
+1：正常连接
+0：不正常";
+CM_ SG_ 769 Orin_Relay_State "Orin子系统继电器状态
+0x0：不正常连接
+0x1：正常连接";
+CM_ SG_ 769 Motor_Temp_State "0x0：电机温度正常
+0x1：电机温度大于150度";
+CM_ SG_ 769 Fog_Light_state "雾灯状态
+0x0：雾灯反馈灭
+0x1：雾灯反馈亮";
+CM_ SG_ 769 Power_Button_State "电源开关引脚反馈
+0x0：关断
+0x1：导通";
+CM_ SG_ 769 EPB_Button_State "EPB驻车开关
+0x0：未按下
+0x1：按下";
+CM_ SG_ 769 Motor_AccLimited "0x0：加速性能正常
+0x1：加速性能受限（达到电机性能上限）";
+CM_ SG_ 769 B_Press_Switch_Collision_State "0x0：后压力波开关未触碰
+0x1：后压力波开关触碰";
+CM_ SG_ 769 Remo_Touch_Switch_Disable_State "0x0：遥控模式下触碰条未禁用
+0x1：遥控模式下触碰条禁用";
+CM_ SG_ 769 F_Press_Switch_Collision_State "0x0：前压力波开关未触碰
+0x1：前压力波开关触碰";
+CM_ SG_ 769 B_Touch_Switch_Disable_State "0x0：后触碰条未禁用
+0x1：后触碰条禁用";
+CM_ SG_ 769 L_Touch_Switch_Disable_State "0x0：左触碰条未禁用
+0x1：左触碰条禁用";
+CM_ SG_ 769 R_Touch_Switch_Disable_State "0x0：右触碰条未禁用
+0x1：右触碰条禁用";
+CM_ SG_ 769 F_Touch_Switch_Disable_State "0x0：前触碰条未禁用
+0x1：前触碰条禁用";
+CM_ SG_ 769 R_Touch_Switch_Collision_State "0x0：右触碰条未触发
+0x1：右触碰条触发";
+CM_ SG_ 769 L_Touch_Switch_Collision_State "0x0：左触碰条未触碰
+0x1：左触碰条触发";
+CM_ SG_ 769 AD_FaultCode "进入AD模式错误原因
+0x0：正常
+0x1：底盘插着充电枪，禁止进入AD";
+CM_ SG_ 769 EPB_Diagnosis "0x0：EPB无故障
+0x1：EPB有故障";
+CM_ SG_ 769 Move_Switch "0x0：未处于挪车模式
+0x1：挪车模式";
+CM_ SG_ 769 LowBeam_State "0x0：近光灯灭
+0x1：近光灯亮";
+CM_ SG_ 769 Reversing_Lights_State "0x0：倒车灯反馈灭
+0x1：倒车灯反馈亮";
+CM_ SG_ 769 Tire_Sensor_State "0x0：胎压传感器控制盒信号正常
+0x1：胎压传感器控制盒信号丢失";
+CM_ SG_ 769 Brake_Light_State "0x0：制动灯反馈灭
+0x1：制动灯反馈亮";
+CM_ SG_ 769 Vehicle_Fault_Grade "整车故障等级0、1、2、3级故障
+0级为无故障
+1级故障 不影响车辆行驶
+2级故障 速度环限制车速最高5km/h，扭矩环不做限制
+3级为最高级故障，车辆禁止行驶
+";
+CM_ SG_ 769 EPS_State "0x0：EPS无故障
+0x1：EPS有故障";
+CM_ SG_ 769 Vehicle_Diagnosis_MsgCntr "心跳周期0-15";
+CM_ SG_ 769 Horn_1_State "0x0：低速报警器内置喇叭关
+0x1：低速报警器内置喇叭开";
+CM_ SG_ 769 HighBeam_State "0x0：远光灯反馈灭
+0x1：远光灯反馈亮";
+CM_ SG_ 769 Right_Turn_Light_State "0x0：右转灯灭
+0x1：右转灯亮";
+CM_ SG_ 769 Left_Turn_Light_State "0x0：左转灯灭
+0x1：左转灯亮";
+CM_ SG_ 769 B_Touch_Switch_Collision_State "0x0：后触碰条未触碰
+0x1：后触碰条触发";
+CM_ SG_ 769 F_Touch_Switch_Collision_State "0x0：前触碰条未触碰
+0x1：前触碰条触发";
+CM_ SG_ 769 BMS_State "0x0：BMS正常
+0x1：BMS信号丢失或有故障";
+CM_ SG_ 769 Emergency_Button_State "0x0：急停按钮未按下
+0x1：急停按钮按下";
+CM_ SG_ 769 DBS_State "1表示有故障，0表示无故障";
+CM_ SG_ 769 AD_State "0x0：自驾使能反馈
+0x1：自驾未使能反馈";
+CM_ SG_ 769 Remote_State "0x0：遥控器已连接
+0x1：遥控器未连接";
+CM_ SG_ 769 Motor_State "0x0：MCU无故障
+0x1：MCU故障";
+CM_ BO_ 399 "本消息由VCU转发自子部件";
+CM_ SG_ 399 EPS_Fault_Code "0000:无故障
+0001:输入过压
+0010:输入欠压
+0011:控制器过温
+0100:扭矩传感器故障
+0101:角度传感察故障
+0110:控制器内部故障
+0111:通讯故障
+1000:角度中位未标定
+1001:电机及驱动故障
+
+";
+CM_ SG_ 399 EPS_Current "当前电流";
+CM_ SG_ 399 EPS_Fault_Grade "BIT0=1 一级故障
+BIT1=1 二级故障
+BIT2=1 三级故障
+BIT3=1 通讯故障";
+CM_ SG_ 399 EPS_Temperature "EPS ECU温度";
+CM_ SG_ 399 EPS_Angle_Spd "EPS角速度反馈";
+CM_ SG_ 399 EPS_Calibration_Status "1 EPS中位未标定，0 EPS中位已标定";
+CM_ SG_ 399 EPS_StrAngle_Act "EPS当前角度值";
+CM_ SG_ 399 EPS_Fault "1 ECU检测到故障，0 ECU未检测到故障";
+CM_ SG_ 399 EPS_Work_Mode_Status "EPS 1工作模式，0停止模式";
+CM_ BO_ 788 "本消息由VCU转发自VCU请求";
+CM_ SG_ 788 VCU_Request_EPS_Angle_Speed "转向角速度";
+CM_ SG_ 788 VCU_Request_EPS_Angle_Calibrate "不需要对中时，此字节发 0x00 即可";
+CM_ SG_ 788 VCU_Req_EPS_Target_Angle "请求角度";
+CM_ SG_ 788 VCU_EPS_CtrlEnable "EPS控制使能，1工作，0停止";
+CM_ BO_ 267 "本消息由VCU转发自子部件";
+CM_ BO_ 266 "本消息由VCU转发自子部件";
+CM_ BO_ 886 "本消息由VCU转发自子部件";
+CM_ SG_ 886 EPB_MANUAL_PARKING_KEY "按钮状态：  0 Netural，1 释放， 2 锁紧，  3 未接入（未接入手动开关时仍可以can控制），4 开关故障";
+CM_ SG_ 886 EPB_FINAL_STATES_R "EPB反馈状态：  0x0：Released；0x1：Applied；0x2：Releasing；  0x3：Applying；0x4:unknown；";
+CM_ SG_ 886 EPB_FINAL_STATES_L "EPB反馈状态： 0x0：Released；0x1：Applied；0x2：Releasing；0x3：Applying；0x4:unknown；";
+CM_ SG_ 886 EPB_FAULT "EPB故障码： 第1bit：右卡钳故障；第2bit：左卡钳故障；  第3bit：ECU故障； 第4bit：通讯故障（收到VCU请求后，VCU请求中断为通讯故障）；第5bit：未知状态";
+CM_ BO_ 785 "本消息由VCU转发自VCU请求";
+CM_ SG_ 785 VCU_EPB_Parking_Request_R "VCU请求EPB右卡钳：1 释放， 2 锁紧，3 保留上一状态值";
+CM_ SG_ 785 VCU_EPB_Parking_Request_L "VCU请求EPB左卡钳：1 释放， 2 锁紧，3 保留上一状态值";
+CM_ SG_ 785 VCU_EPB_Parking_Request_ALL "VCU请求EPB左右卡钳同时工作：1 释放， 2 锁紧，3 保留上一状态值";
+CM_ SG_ 785 VCU_EPB_Parking_Flag_R "EPB使能，1有效 0无效";
+CM_ SG_ 785 VCU_EPB_Parking_Flag_L "EPB使能，1有效 0无效";
+CM_ SG_ 785 VCU_EPB_Parking_Flag_ALL "EPB使能，1有效 0无效";
+CM_ SG_ 785 VCU_EPB_Clamping_force_R "右卡钳夹紧力请求0N-15000N";
+CM_ SG_ 785 VCU_EPB_Clamping_force_L "左卡钳夹紧力请求0N-15000N";
+CM_ BO_ 2040 "VCU版本号";
+CM_ SG_ 2040 Day "dd";
+CM_ SG_ 2040 Month "MM";
+CM_ SG_ 2040 Year "yyyy";
+CM_ BO_ 780 "VCU电源管理反馈";
+CM_ SG_ 780 VCU_SleepSig "1为Tbox远程下电
+2为A59下电
+3为关机充电拔枪下电
+%4为补电结束下电
+%5为重启下电
+6为OTA交互下电
+7为忽略车速A59下电
+8为忽略EPBA59下电
+9为开机充电A59下电
+10为忽略车速Tbox下电
+11为忽略EPBTbox下电";
+CM_ SG_ 780 VCU_BTVersion2 "BT小版本号，此为十进制，需要转16进制读取，24年8月份BT版本为52，即为0x34，故版本号为3.4";
+CM_ SG_ 780 VCU_BTVersion1 "BT大版本号，十进制直接读取，24年8月份为1";
+CM_ SG_ 780 VCU_ABSoftSt "01:old
+10:new";
+CM_ SG_ 780 VCU_CP_Sts "车辆插枪判断：
+0：未插枪
+1：插枪
+2：预留";
+CM_ SG_ 780 VCU_OTA_Flag "VCU_OTA的标志：
+0：未升级
+1：即将进行升级";
+CM_ SG_ 780 VCU_LVMuteChargeSt "0x00:未补电
+0x01:补电进行中
+0x02:补电完成
+0x03:补电条件未满足
+0x04:无需补电";
+CM_ SG_ 780 VCU_PwrDownSt "0x00:电源管理无操作
+0x01:关机进行中
+0x02:重启进行中";
+CM_ SG_ 780 VCU_PUM_FSM_Pointer "Debug_Only";
+CM_ SG_ 780 VCU_VehRdyDiagEnable "车辆自检使能";
+CM_ SG_ 780 VCU_LowBattVolt "VCU AI28采集BATT电压结果";
+CM_ SG_ 780 VCU_LVPwrActReq "Debug_Only";
+CM_ SG_ 780 VCU_HVPwrActReq "Debug_Only
+";
+CM_ SG_ 780 VCU_WeakUpSig "0x01:Tbox远程唤醒
+0x02:按键唤醒
+0x03:未知原因（可能为未知CAN报文唤醒）
+0x04:OBC唤醒
+0x05:铅酸电池补电模式唤醒
+0x06:补电过程中开机唤醒
+0x07:补电过程中充电枪唤醒
+";
+CM_ BO_ 323 "本消息由VCU转发自子部件";
+CM_ SG_ 323 DBS_Angle "电机角度";
+CM_ SG_ 323 DBS_ActualReactPress "实际执行压力值";
+CM_ SG_ 323 DBS_CheckSum "CheckSum校验和,Checksum = byte0 XOR byte1  XOR  byte2 XOR ····· XOR byte6";
+CM_ SG_ 323 DBS_WaringCode_143 "警告类型。 
+第0bit：急停按键闭合警告；
+第1bit：驻车时间过长，超1min；
+第2bit：CAN1中断警告；
+第3bit：CAN2中断警告；
+第4bit：点火线断开警告；
+第5bit：电流异常警告
+第6bit：温度过高警告
+第7bit：输入电压过高警告";
+CM_ SG_ 323 DBS_FaultCode "故障码
+第1bit：过载保护；
+第2bit：过温保护；
+第3bit：过流保护；
+第4bit：电源欠压故障；
+第5bit：电源过压故障；
+第6bit：压力不足；
+第7bit：电机故障；
+第8bit：通讯故障；
+第9bit：电流采样故障；
+第10bit：驱动故障；
+第11bit：磁编故障；
+第12bit：压力传感器故障；
+第13bit：踏板位置传感器故障；
+第14bit：其他故障；";
+CM_ BO_ 322 "本消息由VCU转发自子部件";
+CM_ SG_ 322 DBS_BrakePressureReqACK "制动压力请求应答，DBS执行完成应答有效
+0x0: Not ACK
+0x1: ACK";
+CM_ SG_ 322 DBS_EstopFlag "急停标志位";
+CM_ SG_ 322 DBS_PedaiFlag "踏板插入标志位：
+0：踏板未插入
+1：踏板已插入";
+CM_ SG_ 322 DBS_Ref_Iq "实际电流";
+CM_ SG_ 322 DBS_Work_Mode "工作模式
+0x0:CAN control
+0x1:Exhaust Mode     
+0x2:Pedal Mode （踏板模式为0-5V电信号输入，对应0-8MPa压力反馈，有电压输入时，优先进入该模式）   
+0x3:Iq control Mode (此时请求非0压力会有8A电流，请求0压力会有-1A电流)";
+CM_ SG_ 322 DBS_RollingCounter "从0到15循环计数，如果通信中断，则重新从0开始计数";
+CM_ SG_ 322 DBS_Park_Warning "驻车时间警告信号。0：正常工作；1：驻车时间超过1分钟，发出警告，建议EPB驻车请求。";
+CM_ SG_ 322 DBS_PeadalOpening "踏板开合度（0%—100%）";
+CM_ SG_ 322 DBS_CheckSum "CheckSum校验和,Checksum = byte0 XOR byte1  XOR  byte2 XOR ····· XOR byte6";
+CM_ SG_ 322 DBS_HP_pressure "制动系统压力反馈";
+CM_ SG_ 322 DBS_System_Status "系统故障状态
+0:System No Fault
+1:System Waring
+2:System Fault";
+CM_ BO_ 340 "本消息由VCU转发自VCU请求";
+CM_ SG_ 340 VCU_DBS_PwrOff "下电标志位，期间屏蔽警告";
+CM_ SG_ 340 VCU_DBS_SoftReset "软件复位
+0x00:无请求
+0x01:软复位请求";
+CM_ SG_ 340 VCU_DBS_SpeedFlag "0x0：车辆未行驶
+0x1：车辆行驶中";
+CM_ SG_ 340 VCU_DBS_Work_Mode "排气模式（0：线控模式，1：排气模式，2：踏板模式，3：电流控制模式）";
+CM_ SG_ 340 VCU_DBS_Pressure_Request "发送目标压力";
+CM_ SG_ 340 VCU_DBS_Request_Flag "VCU制动请求使能位 0：助力模式；1线控模式";
+CM_ BO_ 16 "本消息由VCU转发自子部件";
+CM_ SG_ 16 Motor_ActIdc "电机三相电流";
+CM_ SG_ 16 Motor_ActSpeed "电机转速";
+CM_ SG_ 16 Motor_ActDir "MCU内部实际响应趋势
+0x00:N
+0x01:D
+0x02:R";
+CM_ SG_ 16 Motor_ActTorque "电机反馈扭矩";
+CM_ SG_ 16 Motor_FalutCode "故障码详见故障列表";
+CM_ SG_ 16 Motor_Temp "电机温度";
+CM_ BO_ 352 "本消息由VCU转发自VCU请求";
+CM_ SG_ 352 VCU_stMovDir "0x00:N 无实际意义，表示各运行模式的默认趋势。
+0x01:D
+0x02:R
+注：指明运动趋势用途，控制量按照正负发送。用以MCU逻辑判断";
+CM_ SG_ 352 VCU_SoftReset "0x00:无请求
+0x01:请求复位";
+CM_ SG_ 352 VCU_ActiveHVReleaseReq "0x0:无请求
+0x1:主动泄压";
+CM_ SG_ 352 VCU_MotNegSpdLmt "扭矩模式下电机负转速都不应超过此限速";
+CM_ SG_ 352 VCU_MotNegTrqLmt "速度模式下电机负扭矩都不应超过此限值";
+CM_ SG_ 352 VCU_ClampingBrakeReq "电机抱闸请求
+0：松抱闸
+1：抱闸";
+CM_ SG_ 352 VCU_VehHVReady "电机状态
+0x0：进入待机状态
+0x1：可进入运行状态";
+CM_ SG_ 352 VCU_ModeReq "电机模式请求
+0x0：零扭矩模式
+0x1：零速度模式
+0x2：扭矩环模式
+0x3：速度环模式 ";
+CM_ SG_ 352 VCU_TargetSpdReq "转速请求：请求的转速，正转速为正转，负转速为反转 
+";
+CM_ SG_ 352 VCU_MotPosSpdLmt "扭矩模式下电机正转速都不应超过此限速";
+CM_ SG_ 352 VCU_MotPosTrqLmt "速度模式下电机正扭矩都不应超过此限值";
+CM_ SG_ 352 VCU_TargetTqReq "扭矩请求：请求的扭矩,正扭矩为正转，负扭矩为反转 ，当电机旋转方向与扭矩值正负符号一致时为电机做功状态，反之则为发电状态";
+CM_ BO_ 324 "本消息由VCU转发自子部件";
+CM_ SG_ 324 DBS_WaringCode_144 "警告类型。 
+第0bit：输入电压过低警告
+第1bit：角度过大警告
+第2bit：残压警告
+第3bit：压力不足警告";
+CM_ SG_ 324 DBS_CheckSum "CheckSum校验和,Checksum = byte0 XOR byte1  XOR  byte2 XOR ····· XOR byte6";
+CM_ BO_ 418 "本消息由BMS发出，包含BMS诊断信息。";
+CM_ SG_ 418 BMS_CP_Vol "CP检测点2电压";
+CM_ SG_ 418 BMS_CP "CP占空比";
+CM_ SG_ 418 BMS_APlus "A+电压";
+CM_ SG_ 418 BMS_CC_Sts "CC信号状态
+
+0x00:未连接
+0x01:半连接3300欧
+0x02:正常连接
+0x03:电阻检测错误";
+CM_ SG_ 418 BMS_CP_Sts "CP信号状态
+
+0x00:未检测到CP信号
+0x01:CP信号正常
+";
+CM_ SG_ 418 BMS_S2_Sts "S2开关控制位状态
+
+0x00:open
+0x01:close";
+CM_ SG_ 418 BMS_Charge_Relay_Sts "0x00 : open
+0x01: close
+充电继电器状态";
+CM_ SG_ 418 BMS_AcDc_Relay_Sts "0x00 : open
+0x01: close
+空调继电器状态";
+CM_ SG_ 418 BMS_WeakUpSig "BMS唤醒源
+0x01: keyon
+0x02: A+
+0x04: CP";
+CM_ SG_ 418 BMS_KeyOn "常电电压";
+CM_ SG_ 418 BMS_Req_HvDown "BMS请求下高压
+0x00: 无请求
+0x01: 请求高压下电";
+CM_ SG_ 418 BMS_SelfChk_Sts "BMS自检状态
+0x00: 自检中
+0x01: 自检成功
+0x02: 自检失败";
+CM_ SG_ 418 BMS_Heat_Relay_Sts "加热继电器状态
+0x00 : open
+0x01: close";
+CM_ SG_ 418 BMS_Precharge_Sts "预充状态
+0x00: 无效
+0x01: 预充中
+0x02: 预充成功
+0x03: 预充失败";
+CM_ SG_ 418 BMS_Charge_Sts "0x00: 非充电状态(比如休眠 放电中 放电故障等)
+0x01: 充电中
+0x02 : 加热中
+0x03 : 边充电边加热中
+0x04: 充电完成(在充电完成时，检测到充电故障发充电完成)
+0x05: 充电故障";
+CM_ SG_ 418 BMS_Heart_Beat "心跳信号";
+CM_ SG_ 418 BMS_Precharge_Relay_Sts "预充继电器状态
+0x00 : open
+0x01: close";
+CM_ SG_ 418 BMS_Parent_Relay_Sts "主正继电器状态
+0x00 : open
+0x01: close";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "DBName" "W2_CAN2_VCU";
+BA_ "GenMsgSendType" BO_ 932 0;
+BA_ "GenMsgCycleTime" BO_ 932 1000;
+BA_ "GenMsgCycleTime" BO_ 931 1000;
+BA_ "GenMsgSendType" BO_ 931 0;
+BA_ "GenMsgSendType" BO_ 689 0;
+BA_ "GenMsgCycleTime" BO_ 689 100;
+BA_ "GenMsgSendType" BO_ 673 0;
+BA_ "GenMsgCycleTime" BO_ 673 100;
+BA_ "GenMsgSendType" BO_ 160 0;
+BA_ "GenMsgCycleTime" BO_ 160 100;
+BA_ "GenMsgSendType" BO_ 782 0;
+BA_ "GenMsgCycleTime" BO_ 782 500;
+BA_ "GenMsgCycleTime" BO_ 1811 1000;
+BA_ "GenMsgSendType" BO_ 1811 0;
+BA_ "GenMsgSendType" BO_ 930 0;
+BA_ "GenMsgCycleTime" BO_ 930 1000;
+BA_ "GenMsgSendType" BO_ 778 0;
+BA_ "GenMsgCycleTime" BO_ 778 20;
+BA_ "GenMsgSendType" BO_ 777 0;
+BA_ "GenMsgCycleTime" BO_ 777 20;
+BA_ "GenMsgSendType" BO_ 775 0;
+BA_ "GenMsgCycleTime" BO_ 775 20;
+BA_ "GenMsgSendType" BO_ 776 0;
+BA_ "GenMsgCycleTime" BO_ 776 20;
+BA_ "GenMsgSendType" BO_ 774 0;
+BA_ "GenMsgCycleTime" BO_ 774 20;
+BA_ "GenMsgSendType" BO_ 771 0;
+BA_ "GenMsgCycleTime" BO_ 771 20;
+BA_ "GenMsgSendType" BO_ 772 0;
+BA_ "GenMsgCycleTime" BO_ 772 10;
+BA_ "GenMsgSendType" BO_ 769 0;
+BA_ "GenMsgCycleTime" BO_ 769 20;
+BA_ "GenMsgSendType" BO_ 399 0;
+BA_ "GenMsgCycleTime" BO_ 399 50;
+BA_ "GenMsgSendType" BO_ 788 0;
+BA_ "GenMsgCycleTime" BO_ 788 20;
+BA_ "GenMsgSendType" BO_ 267 0;
+BA_ "GenMsgCycleTime" BO_ 267 50;
+BA_ "GenMsgSendType" BO_ 266 0;
+BA_ "GenMsgCycleTime" BO_ 266 50;
+BA_ "GenMsgCycleTime" BO_ 886 100;
+BA_ "GenMsgSendType" BO_ 886 0;
+BA_ "GenMsgCycleTime" BO_ 785 20;
+BA_ "GenMsgSendType" BO_ 785 0;
+BA_ "GenMsgSendType" BO_ 2040 0;
+BA_ "GenMsgCycleTime" BO_ 2040 1000;
+BA_ "GenMsgCycleTime" BO_ 780 50;
+BA_ "GenMsgSendType" BO_ 780 0;
+BA_ "GenMsgCycleTime" BO_ 323 50;
+BA_ "GenMsgSendType" BO_ 323 0;
+BA_ "GenMsgCycleTime" BO_ 322 50;
+BA_ "GenMsgSendType" BO_ 322 0;
+BA_ "GenMsgSendType" BO_ 340 0;
+BA_ "GenMsgCycleTime" BO_ 340 10;
+BA_ "GenMsgCycleTime" BO_ 16 50;
+BA_ "GenMsgSendType" BO_ 16 0;
+BA_ "GenMsgCycleTime" BO_ 352 20;
+BA_ "GenMsgSendType" BO_ 352 0;
+BA_ "GenMsgCycleTime" BO_ 324 100;
+BA_ "GenMsgSendType" BO_ 324 0;
+BA_ "GenMsgCycleTime" BO_ 418 100;
+BA_ "GenMsgSendType" BO_ 418 0;
+VAL_ 782 Charge_Abnormal 1 "充电异常" 0 "正常充电" ;
+VAL_ 782 VCU_PwrSt 3 "底盘下电" 2 "高低压在线" 1 "低压在线" ;
+VAL_ 782 VCU_CAN2_Fault 7 "Bus Off" 6 "Passive" 5 "RxPassive" 4 "TxPassive" 3 "Warning" 2 "RxWarning" 1 "TxWarning" 0 "Active" ;
+VAL_ 782 VCU_CAN1_Fault 7 "Bus Off" 6 "Passive" 5 "RxPassive" 4 "TxPassive" 3 "Warning" 2 "RxWarning" 1 "TxWarning" 0 "Active" ;
+VAL_ 782 VCU_CAN0_Fault 7 "Bus Off" 6 "Passive" 5 "RxPassive" 4 "TxPassive" 3 "Warning" 2 "RxWarning" 1 "TxWarning" 0 "Active" ;
+VAL_ 782 VCU_PwrCtrl_Fault 2 "重启失败回退" 1 "下电失败回退" 0 "下电无故障" ;
+VAL_ 782 VCU_EPBActinWhenEBSMF 1 "EPB介入" 0 "未介入" ;
+VAL_ 782 VCU_EEPROM_Fault 1 "失败" 0 "成功" ;
+VAL_ 782 VCU_EBSActinWhenEPBMF 1 "DBS介入" 0 "未介入" ;
+VAL_ 778 Vehicle_Poweroff_Channel 1 "下电进行中" 0 "无下电动作" ;
+VAL_ 778 Battery_Work_State 3 "放电" 2 "能量回收" 1 "充电" 0 "未知" ;
+VAL_ 777 RR_WhlDir 3 "Neutral" 2 "Reverse" 1 "Drive" 0 "Invalid" ;
+VAL_ 777 RR_WhlSpdSensErr 11 "占空比超限" 10 "供电故障" 9 "采样停滞" 8 "占空比阶跃" 7 "最大速度超限" 6 "阶跃超限" 5 "采样错误" 4 "占空比不匹配" 3 "传感器型号不匹配" 2 "看门狗超时" 1 "间隙大于2mm或静止" 0 "正常" ;
+VAL_ 777 RR_Valid_Flag 1 "Invalid" 0 "Valid" ;
+VAL_ 777 RR_Tire_Leak_State 1 "泄露" 0 "正常" ;
+VAL_ 777 RR_Sensor_state 1 "信号丢失" 0 "正常" ;
+VAL_ 777 RR_Pressure_Warning 3 "爆胎" 2 "胎压<75%" 1 "胎压>120%" 0 "正常" ;
+VAL_ 775 FR_WhlDir 3 "Neutral" 2 "Reverse" 1 "Drive" 0 "Invalid" ;
+VAL_ 775 FR_WhlSpdSensErr 11 "占空比超限" 10 "供电故障" 9 "采样停滞" 8 "占空比阶跃" 7 "最大速度超限" 6 "阶跃超限" 5 "采样错误" 4 "占空比不匹配" 3 "传感器型号不匹配" 2 "看门狗超时" 1 "间隙大于2mm或静止" 0 "正常" ;
+VAL_ 775 FR_Valid_Flag 1 "Invalid" 0 "Valid" ;
+VAL_ 775 FR_Tire_Leak_State 1 "泄露" 0 "正常" ;
+VAL_ 775 FR_Pressure_Warning 3 "爆胎" 2 "胎压<75%" 1 "胎压>120%" 0 "正常" ;
+VAL_ 775 FR_Sensor_state 1 "信号丢失" 0 "正常" ;
+VAL_ 776 RL_WhlDir 3 "Neutral" 2 "Reverse" 1 "Drive" 0 "Invalid" ;
+VAL_ 776 RL_WhlSpdSensErr 11 "占空比超限" 10 "供电故障" 9 "采样停滞" 8 "占空比阶跃" 7 "最大速度超限" 6 "阶跃超限" 5 "采样错误" 4 "占空比不匹配" 3 "传感器型号不匹配" 2 "看门狗超时" 1 "间隙大于2mm或静止" 0 "正常" ;
+VAL_ 776 RL_Valid_Flag 1 "Invalid" 0 "Valid" ;
+VAL_ 776 RL_Pressure_Warning 3 "爆胎" 2 "胎压<75%" 1 "胎压>120%" 0 "正常" ;
+VAL_ 776 RL_Sensor_state 1 "信号丢失" 0 "正常" ;
+VAL_ 776 RL_Tire_Leak_State 1 "泄露" 0 "正常" ;
+VAL_ 774 FL_WhlDir 3 "Neutral" 2 "Reverse" 1 "Drive" 0 "Invalid" ;
+VAL_ 774 FL_WhlSpdSensErr 11 "占空比超限" 10 "供电故障" 9 "采样停滞" 8 "占空比阶跃" 7 "最大速度超限" 6 "阶跃超限" 5 "采样错误" 4 "占空比不匹配" 3 "传感器型号不匹配" 2 "看门狗超时" 1 "间隙大于2mm或静止" 0 "正常" ;
+VAL_ 774 FL_Valid_Flag 1 "Invalid" 0 "Valid" ;
+VAL_ 774 FL_Sensor_state 1 "信号丢失" 0 "正常" ;
+VAL_ 774 FL_Pressure_Warning 3 "爆胎" 2 "胎压<75%" 1 "胎压>120%" 0 "正常" ;
+VAL_ 774 FL_Tire_Leak_State 1 "泄露" 0 "正常" ;
+VAL_ 771 Drive_Mode_State 5 "自驾低功耗模式" 3 "故障" 2 "空闲模式" 1 "自驾模式" 0 "遥控模式" ;
+VAL_ 771 EPB_Status 1 "EPB夹紧" 0 "EPB释放" ;
+VAL_ 771 Vehicle_Gear 3 "R档" 2 "N档" 1 "D档" 0 "P档" ;
+VAL_ 772 Vehicle_Speed_Vaild 1 "Valid" 0 "Invalid" ;
+VAL_ 769 VCU_ADOTAFlag 1 "允许自驾OTA" 0 "禁止自驾OTA" ;
+VAL_ 769 Clean_Fan_Flag 1 "On" 0 "Off" ;
+VAL_ 769 Horn_2_State 1 "On" 0 "Off" ;
+VAL_ 769 KERS_Limited 1 "Limited" 0 "Normal" ;
+VAL_ 769 Oil_pot_State 1 "Fault" 0 "Normal" ;
+VAL_ 769 Business_Relay_State 1 "Close" 0 "Open" ;
+VAL_ 769 Relay_4G_State 1 "Close" 0 "Open" ;
+VAL_ 769 Radar_Relay_State 1 "Close" 0 "Open" ;
+VAL_ 769 Orin_Relay_State 1 "Close" 0 "Open" ;
+VAL_ 769 Motor_Temp_State 1 "Fault" 0 "Normal" ;
+VAL_ 769 Fog_Light_state 1 "On" 0 "Off" ;
+VAL_ 769 Power_Button_State 1 "Pressed" 0 "Released" ;
+VAL_ 769 EPB_Button_State 1 "Pressed" 0 "Released" ;
+VAL_ 769 Motor_AccLimited 1 "Limited" 0 "Normal" ;
+VAL_ 769 B_Press_Switch_Collision_State 1 "Active" 0 "Deactive" ;
+VAL_ 769 Remo_Touch_Switch_Disable_State 1 "Active" 0 "Deactive" ;
+VAL_ 769 F_Press_Switch_Collision_State 1 "Active" 0 "Deactive" ;
+VAL_ 769 B_Touch_Switch_Disable_State 1 "Enable" 0 "Disable" ;
+VAL_ 769 L_Touch_Switch_Disable_State 1 "Enable" 0 "Disable" ;
+VAL_ 769 R_Touch_Switch_Disable_State 1 "Enable" 0 "Disable" ;
+VAL_ 769 F_Touch_Switch_Disable_State 1 "Enable" 0 "Disable" ;
+VAL_ 769 R_Touch_Switch_Collision_State 1 "Active" 0 "Deactive" ;
+VAL_ 769 L_Touch_Switch_Collision_State 1 "Active" 0 "Deactive" ;
+VAL_ 769 EPB_Diagnosis 1 "Fault" 0 "Normal" ;
+VAL_ 769 LowBeam_State 1 "On" 0 "Off" ;
+VAL_ 769 Reversing_Lights_State 1 "On" 0 "Off" ;
+VAL_ 769 Tire_Sensor_State 1 "Fault" 0 "Normal" ;
+VAL_ 769 Brake_Light_State 1 "On" 0 "Off" ;
+VAL_ 769 Vehicle_Fault_Grade 3 "Level3" 2 "Level2" 1 "Level1" 0 "Normal" ;
+VAL_ 769 EPS_State 1 "Fault" 0 "Normal" ;
+VAL_ 769 Horn_1_State 1 "On" 0 "Off" ;
+VAL_ 769 HighBeam_State 1 "On" 0 "Off" ;
+VAL_ 769 Right_Turn_Light_State 1 "On" 0 "Off" ;
+VAL_ 769 Left_Turn_Light_State 1 "On" 0 "Off" ;
+VAL_ 769 B_Touch_Switch_Collision_State 1 "Active" 0 "Deactive" ;
+VAL_ 769 F_Touch_Switch_Collision_State 1 "Active" 0 "Deactive" ;
+VAL_ 769 BMS_State 1 "Fault" 0 "Normal" ;
+VAL_ 769 Emergency_Button_State 1 "Pressed" 0 "Released" ;
+VAL_ 769 DBS_State 1 "Fault" 0 "Normal" ;
+VAL_ 769 AD_State 1 "Disconnected" 0 "Connected" ;
+VAL_ 769 Remote_State 1 "Disconnected" 0 "Connected" ;
+VAL_ 769 Motor_State 1 "Fault" 0 "Normal" ;
+VAL_ 399 EPS_Calibration_Status 1 "EPS中位未标定" 0 "EPS中位已标定" ;
+VAL_ 399 EPS_Fault 1 "ECU有故障" 0 "ECU无故障" ;
+VAL_ 399 EPS_Work_Mode_Status 1 "工作模式" 0 "停止模式" ;
+VAL_ 788 VCU_EPS_CtrlEnable 1 "Enable" 0 "Disable" ;
+VAL_ 886 EPB_FINAL_STATES_R 4 "Unknow" 3 "Applying" 2 "Releasing" 1 "Appiled" 0 "Released" ;
+VAL_ 886 EPB_FINAL_STATES_L 4 "Unknow" 3 "Applying" 2 "Releasing" 1 "Appiled" 0 "Released" ;
+VAL_ 785 VCU_EPB_Parking_Request_R 3 "保持" 2 "锁紧" 1 "释放" ;
+VAL_ 785 VCU_EPB_Parking_Request_L 3 "保持" 2 "锁紧" 1 "释放" ;
+VAL_ 785 VCU_EPB_Parking_Request_ALL 3 "保持" 2 "锁紧" 1 "释放" ;
+VAL_ 785 VCU_EPB_Parking_Flag_R 1 "Enable" 0 "Disable" ;
+VAL_ 785 VCU_EPB_Parking_Flag_L 1 "Enable" 0 "Disable" ;
+VAL_ 785 VCU_EPB_Parking_Flag_ALL 1 "Enable" 0 "Disable" ;
+VAL_ 780 VCU_Power_St 4 "无线充电" 3 "关机充电" 2 "开机充电" 1 "开机" 0 "关机" ;
+VAL_ 780 VCU_SleepSig 0 "无下电源" 9 "充电枪断联下电" 6 "OTA下电" 5 "重启下电" 4 "补电唤醒完成下电" 3 "补电唤醒终止下电" 2 "点火线下电" 1 "远程下电" ;
+VAL_ 780 VCU_CP_Sts 1 "已插枪" 0 "未插枪" ;
+VAL_ 780 VCU_OTA_Flag 1 "升级准备中" 0 "未升级" ;
+VAL_ 780 VCU_LVMuteChargeSt 6 "OTA中断补电" 5 "用户中断补电" 4 "无需补电" 3 "补电故障" 2 "补电完成" 1 "补电中" 0 "未补电" ;
+VAL_ 780 VCU_PwrDownSt 2 "重启中" 1 "关机中" 0 "无下电动作" ;
+VAL_ 780 VCU_VehRdyDiagEnable 1 "DiagReady" 0 "DiagDisabled" ;
+VAL_ 780 VCU_WeakUpSig 7 "补电期间充电枪唤醒" 6 "补电期间点火线唤醒" 5 "补电唤醒" 4 "充电枪唤醒" 3 "未知" 2 "点火线唤醒" 1 "远程唤醒" ;
+

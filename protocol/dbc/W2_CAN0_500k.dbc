@@ -1,0 +1,812 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Alarm DCDC OBC BMS VCU MCU DBS
+
+
+BO_ 1013 BMS_3F5H: 8 BMS
+ SG_ BMS_Ctl_heartBeat : 40|8@1+ (1,0) [0|255] ""  OBC
+ SG_ BMS_Ctl_Out_En : 32|8@1+ (1,0) [0|255] ""  OBC
+ SG_ BMS_Ctl_Curr : 16|16@1+ (0.01,0) [0|1000] "A"  OBC
+ SG_ BMS_Ctl_Vol : 0|16@1+ (0.1,0) [0|1000] "V"  OBC
+
+BO_ 353 VCU_MCU_Req2: 8 VCU
+ SG_ VCU_BMS_Precharge_Relay_Sts : 40|1@1+ (1,0) [0|1] ""  MCU
+
+BO_ 383 VCU_DCDC1_Req: 8 VCU
+ SG_ VCU_DCDC1_Reserved : 30|2@1+ (1,0) [0|3] ""  DCDC
+ SG_ VCU_DCDC1_Enable : 28|2@1+ (1,0) [0|3] ""  DCDC
+
+BO_ 369 DCDC_171h: 8 DCDC
+ SG_ DCDC_1_Life : 56|8@1+ (1,0) [0|255] ""  VCU
+ SG_ DCDC_1_FaultCode : 48|8@1+ (1,0) [0|255] ""  VCU
+ SG_ DCDC_1_Out_C : 32|16@1+ (0.05,-500) [-500|2776.75] "A"  VCU
+ SG_ DCDC_1_Out_V : 16|16@1+ (0.05,0) [0|3276.75] "V"  VCU
+ SG_ DCDC_1_Temp : 8|8@1+ (1,-40) [-40|215] "℃"  VCU
+ SG_ DCDC_1_SystemStaus : 5|3@1+ (1,0) [0|7] ""  VCU
+ SG_ DCDC_1_Fault_Status : 3|2@1+ (1,0) [0|3] ""  VCU
+ SG_ DCDC_1_Status : 1|2@1+ (1,0) [0|3] ""  VCU
+
+BO_ 420 BMS_1A4h: 8 BMS
+ SG_ BMS_Insulation_Resist : 0|16@1+ (1,0) [0|65535] ""  VCU
+ SG_ BMS_HighVolt2 : 16|16@1+ (0.1,0) [0|6553.5] ""  VCU
+
+BO_ 419 BMS_1A3h: 8 BMS
+ SG_ BMS_Pwr30s : 48|16@1+ (0.1,0) [0|6553.5] "kw"  VCU
+ SG_ BMS_Pwr : 32|16@1+ (0.1,0) [0|6553.5] "kw"  VCU
+ SG_ BMS_ChgPwr30s : 16|16@1+ (0.1,0) [0|6553.5] "kw"  VCU
+ SG_ BMS_ChgPwr : 0|16@1+ (0.1,0) [0|6553.5] "kw"  VCU
+
+BO_ 1014 OBC_3F6H: 8 OBC
+ SG_ Charger_ActuTem : 48|8@1+ (1,0) [0|100] "℃"  BMS
+ SG_ Fan_Enable : 44|1@1+ (1,0) [0|100] ""  BMS
+ SG_ Charge_Int_Sts : 43|1@1+ (1,0) [0|100] ""  BMS
+ SG_ Charge_Work_Sts : 41|2@1+ (1,0) [0|3] ""  BMS
+ SG_ ChargerCommunicationSts : 40|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charge_Output_ShortCircuit : 39|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Output_OverCurrent : 38|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Output_OverVoltage : 37|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Output_UnderVoltage : 36|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Coupling : 34|2@1+ (1,0) [0|3] ""  BMS
+ SG_ ChargerOTP : 33|1@1+ (1,0) [0|1] ""  BMS
+ SG_ ChargerHardwareProtect : 32|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Output_Current : 16|16@1+ (0.1,0) [0|1000] "A"  BMS
+ SG_ Charger_Output_Voltage : 0|16@1+ (0.1,0) [0|1000] "V"  BMS
+
+BO_ 997 OBC_3E5h: 8 OBC
+ SG_ Invaild_S2_Sts : 55|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Invaild_Electronic_Lock_Sts : 52|3@1+ (1,0) [0|7] ""  BMS
+ SG_ Invaild_Charging_Socket_TemSts : 51|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Invaild_Cooling_Pump_Fan_Enable : 45|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Invaild_Fan_Enable : 44|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charge_Int_Sts : 43|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charge_Work_Sts : 41|2@1+ (1,0) [0|3] ""  BMS
+ SG_ Charge_Output_ShortCircuit : 39|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Output_OverCurrent : 38|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Output_UnderVoltage : 36|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_Output_OverVoltage : 37|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Invaild_CP_Sts : 50|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Invaild_CC_Sts : 48|2@1+ (1,0) [0|3] ""  BMS
+ SG_ ChargerCommunicationSts : 40|1@1+ (1,0) [0|1] ""  BMS
+ SG_ ChargerInputVoltageSts : 34|2@1+ (1,0) [0|3] ""  BMS
+ SG_ ChargerOTP : 33|1@1+ (1,0) [0|1] ""  BMS
+ SG_ ChargerHardwareProtect : 32|1@1+ (1,0) [0|1] ""  BMS
+ SG_ Charger_ActuTem : 56|8@1+ (1,-40) [-40|215] "℃"  BMS
+ SG_ Charger_Output_Voltage : 0|16@1+ (0.1,0) [0|1000] "V"  BMS
+ SG_ Charger_Output_Current : 16|16@1+ (0.1,0) [0|1000] "A"  BMS
+
+BO_ 689 BMS_2B1h: 8 BMS
+ SG_ BMS_Battery_Capacity_Kwh : 16|16@1+ (0.01,0) [0|655.35] "Kwh"  VCU
+ SG_ BMS_Battery_Capacity_Ah : 48|10@1+ (1,0) [0|1023] "Ah"  VCU
+ SG_ BMS_HVBatLowestTemCellNum : 32|8@1+ (1,0) [0|250] ""  VCU
+ SG_ BMS_HVBatHighestTemCellNum : 40|8@1+ (1,0) [0|250] ""  VCU
+ SG_ BMS_HVBatHighestTem : 8|8@1+ (1,-40) [-40|125] "℃"  VCU
+ SG_ BMS_HVBatLowestTem : 0|8@1+ (1,-40) [-40|125] "℃"  VCU
+
+BO_ 1443 VCU_5A3h: 8 VCU
+ SG_ VCU_PowerOn_V2L : 31|1@1+ (1,0) [0|1] ""  BMS
+ SG_ VCU_Ctrl_Wireless : 16|8@1+ (1,0) [0|255] ""  BMS
+ SG_ VCU_Ctrl_AcDc : 8|8@1+ (1,0) [0|255] ""  BMS
+ SG_ VCU_PowerOn_BMS : 0|8@1+ (1,0) [0|255] ""  BMS
+
+BO_ 690 BMS_2B2h: 8 BMS
+ SG_ BMS_HVBatCellTem_No8 : 56|8@1+ (1,-40) [-40|210] ""  VCU
+ SG_ BMS_HVBatCellTem_No7 : 48|8@1+ (1,-40) [-40|210] ""  VCU
+ SG_ BMS_HVBatCellTem_No6 : 40|8@1+ (1,-40) [-40|210] ""  VCU
+ SG_ BMS_HVBatCellTem_No5 : 32|8@1+ (1,-40) [-40|210] ""  VCU
+ SG_ BMS_HVBatCellTem_No4 : 24|8@1+ (1,-40) [-40|210] ""  VCU
+ SG_ BMS_HVBatCellTem_No3 : 16|8@1+ (1,-40) [-40|210] ""  VCU
+ SG_ BMS_HVBatCellTem_No2 : 8|8@1+ (1,-40) [-40|210] ""  VCU
+ SG_ BMS_HVBatCellTem_No1 : 0|8@1+ (1,-40) [-40|210] ""  VCU
+
+BO_ 679 BMS_2A7h: 8 BMS
+ SG_ BMS_HVBatCellVol_No24 : 48|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No23 : 32|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No22 : 16|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No21 : 0|16@1+ (1,0) [0|5000] "mV"  VCU
+
+BO_ 678 BMS_2A6h: 8 BMS
+ SG_ BMS_HVBatCellVol_No20 : 48|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No19 : 32|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No18 : 16|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No17 : 0|16@1+ (1,0) [0|5000] "mV"  VCU
+
+BO_ 677 BMS_2A5h: 8 BMS
+ SG_ BMS_HVBatCellVol_No16 : 48|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No15 : 32|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No14 : 16|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No13 : 0|16@1+ (1,0) [0|5000] "mV"  VCU
+
+BO_ 676 BMS_2A4h: 8 BMS
+ SG_ BMS_HVBatCellVol_No12 : 48|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No11 : 32|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No10 : 16|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No9 : 0|16@1+ (1,0) [0|5000] "mV"  VCU
+
+BO_ 675 BMS_2A3h: 8 BMS
+ SG_ BMS_HVBatCellVol_No8 : 48|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No7 : 32|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No6 : 16|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No5 : 0|16@1+ (1,0) [0|5000] "mV"  VCU
+
+BO_ 674 BMS_2A2h: 8 BMS
+ SG_ BMS_HVBatCellVol_No4 : 48|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No3 : 32|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No2 : 16|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatCellVol_No1 : 0|16@1+ (1,0) [0|5000] "mV"  VCU
+
+BO_ 673 BMS_2A1h: 8 BMS
+ SG_ BMS_HVBatCellVolDiff : 48|16@1+ (1,0) [0|65535] ""  VCU
+ SG_ BMS_HVBatLowestVolCellNum : 32|8@1+ (1,0) [0|250] ""  VCU
+ SG_ BMS_HVBatHighestVolCellNum : 40|8@1+ (1,0) [0|250] ""  VCU
+ SG_ BMS_HVBatHighestCellVol : 16|16@1+ (1,0) [0|5000] "mV"  VCU
+ SG_ BMS_HVBatLowestCellVol : 0|16@1+ (1,0) [0|5000] "mV"  VCU
+
+BO_ 160 BMS_A0h: 8 BMS
+ SG_ BMS_HVDisplaySOH : 56|8@1+ (1,0) [0|255] "%"  VCU
+ SG_ BMS_Sys_Flt : 48|8@1+ (1,0) [0|255] ""  VCU
+ SG_ BMS_Charge_StsCc : 44|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_Charge_StsCc2 : 43|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_Sys_Sts : 40|3@1+ (1,0) [0|7] ""  VCU
+ SG_ BMS_HVBatSOC : 32|8@1+ (0.4,0) [0|100] "%"  VCU
+ SG_ BMS_HVBatVol : 16|16@1+ (0.1,0) [0|1000] "V"  VCU
+ SG_ BMS_HVBatCrnt : 0|16@1+ (0.1,-1000) [-1000|1000] "A"  VCU
+
+BO_ 1012 BMS_3F4h: 8 BMS
+ SG_ BMS_CC_Value : 48|12@1+ (1,0) [0|4095] ""  VCU
+ SG_ BMS_Control_Charge_Mode : 40|8@1+ (1,0) [0|255] ""  VCU
+ SG_ BMS_OBC_MaxChargeVoltage : 0|16@1+ (0.1,0) [0|1000] "V"  VCU
+ SG_ BMS_OBC_MaxChargeCurrent : 16|16@1+ (0.1,0) [0|1000] "A"  VCU
+ SG_ BMS_Enable_Charge_State : 32|8@1+ (1,0) [0|255] ""  VCU
+
+BO_ 418 BMS_1A2h: 8 BMS
+ SG_ BMS_CP_Vol : 32|8@1+ (0.1,0) [0|0] ""  VCU
+ SG_ BMS_CP : 24|8@1+ (1,0) [0|255] ""  VCU
+ SG_ BMS_APlus : 8|8@1+ (0.1,0) [0|25.5] "V"  VCU
+ SG_ BMS_CC_Sts : 6|2@1+ (1,0) [0|3] ""  VCU
+ SG_ BMS_CP_Sts : 5|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_S2_Sts : 4|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_Charge_Relay_Sts : 51|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_AcDc_Relay_Sts : 52|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_WeakUpSig : 0|4@1+ (1,0) [0|15] ""  VCU
+ SG_ BMS_KeyOn : 16|8@1+ (0.1,0) [0|25.5] "V"  VCU
+ SG_ BMS_Req_HvDown : 40|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_SelfChk_Sts : 43|3@1+ (1,0) [0|7] ""  VCU
+ SG_ BMS_Heat_Relay_Sts : 46|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_Precharge_Sts : 49|2@1+ (1,0) [0|3] ""  VCU
+ SG_ BMS_Charge_Sts : 53|3@1+ (1,0) [0|7] ""  VCU
+ SG_ BMS_Heart_Beat : 56|4@1+ (1,0) [0|15] ""  VCU
+ SG_ BMS_Precharge_Relay_Sts : 48|1@1+ (1,0) [0|1] ""  VCU
+ SG_ BMS_Parent_Relay_Sts : 47|1@1+ (1,0) [0|1] ""  VCU
+
+BO_ 325 DBS_Status4: 8 DBS
+ SG_ DBS_SwVer_Year : 33|7@1+ (1,2000) [2000|2127] "Year"  VCU
+ SG_ DBS_SwVer_Month : 29|4@1+ (1,0) [1|12] "Month"  VCU
+ SG_ DBS_SwVer_Date : 24|5@1+ (1,0) [1|31] "Day"  VCU
+ SG_ DBS_RevisionVersion : 0|8@1+ (1,0) [0|0] ""  VCU
+ SG_ DBS_MinorVersion : 8|8@1+ (1,0) [0|0] ""  VCU
+ SG_ DBS_MajorVersion : 16|8@1+ (1,0) [0|0] ""  VCU
+
+BO_ 323 DBS_Status2: 8 DBS
+ SG_ DBS_Angle : 40|16@1+ (0.1,0) [0|6553.5] ""  VCU
+ SG_ DBS_ActualReactPress : 32|8@1+ (0.1,0) [0|12] "Mpa"  VCU
+ SG_ DBS_CheckSum : 56|8@1+ (1,0) [0|255] ""  VCU
+ SG_ DBS_WaringCode_143 : 24|8@1+ (1,0) [0|16777215] ""  VCU
+ SG_ DBS_FaultCode : 0|24@1+ (1,0) [0|16777215] ""  VCU
+
+BO_ 322 DBS_Status: 8 DBS
+ SG_ DBS_BrakePressureReqACK : 16|8@1+ (1,0) [0|1] ""  VCU
+ SG_ DBS_EstopFlag : 54|1@1+ (1,0) [0|1] ""  VCU
+ SG_ DBS_PedaiFlag : 55|1@1+ (1,0) [0|1] ""  VCU
+ SG_ DBS_Ref_Iq : 40|8@1+ (0.5,-20) [-20|107.5] ""  VCU
+ SG_ DBS_Work_Mode : 8|8@1+ (1,0) [0|3] ""  VCU
+ SG_ DBS_RollingCounter : 48|4@1+ (1,0) [0|15] ""  VCU
+ SG_ DBS_Park_Warning : 6|2@1+ (1,0) [0|1] ""  VCU
+ SG_ DBS_PeadalOpening : 32|8@1+ (1,0) [0|100] "%"  VCU
+ SG_ DBS_CheckSum : 56|8@1+ (1,0) [0|255] ""  VCU
+ SG_ DBS_HP_pressure : 24|8@1+ (0.1,0) [0|12] "Mpa"  VCU
+ SG_ DBS_System_Status : 0|2@1+ (1,0) [0|3] "N/A"  VCU
+
+BO_ 340 VCU_DBS_Req: 8 VCU
+ SG_ VCU_DBS_PwrOff : 34|1@1+ (1,0) [0|1] ""  DBS
+ SG_ VCU_DBS_SoftReset : 33|1@1+ (1,0) [0|1] ""  DBS
+ SG_ VCU_DBS_SpeedFlag : 32|1@1+ (1,0) [0|1] ""  DBS
+ SG_ VCU_DBS_Work_Mode : 8|8@1+ (1,0) [0|3] ""  DBS
+ SG_ VCU_DBS_Pressure_Request : 16|8@1+ (0.1,0) [0|12] "Mpa"  DBS
+ SG_ VCU_DBS_Request_Flag : 0|8@1+ (1,0) [0|1] ""  DBS
+
+BO_ 16 MCU_DrvMotSt: 8 MCU
+ SG_ Motor_ActIdc : 36|12@1+ (1,0) [0|1000] "A"  VCU
+ SG_ Motor_ActSpeed : 2|18@1+ (1,-10000) [-10000|10000] "rpm"  VCU
+ SG_ Motor_ActDir : 0|2@1+ (1,0) [0|0] ""  VCU
+ SG_ Motor_ActTorque : 20|16@1+ (0.1,-1000) [-1000|5553.5] "Nm"  VCU
+ SG_ Motor_FalutCode : 56|8@1+ (1,0) [0|255] ""  VCU
+ SG_ Motor_Temp : 48|8@1+ (1,-50) [-50|205] "C"  VCU
+
+BO_ 96 MCU_St: 8 MCU
+ SG_ MCU_MFGMotID : 60|4@1+ (1,0) [0|15] ""  VCU
+ SG_ MCU_MotMaxPwr : 51|9@1+ (0.5,0) [0|255.5] "Kw"  VCU
+ SG_ MCU_stOpMode : 49|2@1+ (1,0) [0|3] ""  VCU
+ SG_ MCU_ClampingBrakeStatus : 47|1@1+ (1,0) [0|1] ""  VCU
+ SG_ MCU_stMode : 43|3@1+ (1,0) [0|5] ""  VCU
+ SG_ MCU_Idc : 16|16@1+ (0.1,-1000) [-1000|5553.5] "A"  VCU
+ SG_ MCU_FalutLevel : 41|2@1+ (1,0) [0|3] ""  VCU
+ SG_ MCU_Temp : 32|8@1+ (1,-50) [-50|205] "C"  VCU
+ SG_ MCU_Udc : 0|16@1+ (0.1,0) [0|6553.5] "V"  VCU
+
+BO_ 97 MCU_Version: 8 MCU
+ SG_ MCU_SwRev : 24|8@1+ (1,0) [0|255] ""  VCU
+ SG_ MCU_SwMinor : 16|8@1+ (1,0) [0|255] ""  VCU
+ SG_ MCU_SwMajor : 8|8@1+ (1,0) [0|255] ""  VCU
+ SG_ MCU_HwMinor : 56|8@1+ (1,0) [0|255] ""  VCU
+ SG_ MCU_SwTpye : 0|8@1+ (1,0) [0|255] ""  VCU
+ SG_ MCU_SwVer_Month : 39|4@1+ (1,0) [0|12] "Month"  VCU
+ SG_ MCU_SwVer_Year : 32|7@1+ (1,2000) [2000|2127] "Year"  VCU
+ SG_ MCU_SwVer_Date : 43|5@1+ (1,0) [0|31] "Day"  VCU
+ SG_ MCU_HwMajor : 48|8@1+ (1,0) [0|255] ""  VCU
+
+BO_ 352 VCU_MCU_Req1: 8 VCU
+ SG_ VCU_stMovDir : 6|2@1+ (1,0) [0|4] ""  MCU
+ SG_ VCU_SoftReset : 5|1@1+ (1,0) [0|1] ""  MCU
+ SG_ VCU_ActiveHVReleaseReq : 4|1@1+ (1,0) [0|1] ""  MCU
+ SG_ VCU_MotNegSpdLmt : 46|6@1+ (150,-9000) [-9000|0] "rpm"  MCU
+ SG_ VCU_MotNegTrqLmt : 58|6@1+ (5,-315) [-315|0] "N.m"  MCU
+ SG_ VCU_ClampingBrakeReq : 3|1@1+ (1,0) [0|1] ""  MCU
+ SG_ VCU_VehHVReady : 0|1@1+ (1,0) [0|1] ""  MCU
+ SG_ VCU_ModeReq : 1|2@1+ (1,0) [0|3] ""  MCU
+ SG_ VCU_TargetSpdReq : 24|16@1+ (1,-7000) [-7000|8000] "rpm"  MCU
+ SG_ VCU_MotPosSpdLmt : 40|6@1+ (150,0) [0|8000] "rpm"  MCU
+ SG_ VCU_MotPosTrqLmt : 52|6@1+ (5,0) [0|315] "N.m"  MCU
+ SG_ VCU_TargetTqReq : 8|16@1+ (0.1,-1000) [-1000|1000] "N.m"  MCU
+
+BO_ 639 VCU_DCDC2_Req: 8 VCU
+ SG_ VCU_DCDC2_Reserved : 30|2@1+ (1,0) [0|3] ""  DCDC
+ SG_ VCU_DCDC2_Enable : 28|2@1+ (1,0) [0|3] ""  DCDC
+
+BO_ 625 DCDC_271h: 8 DCDC
+ SG_ DCDC_2_Life : 56|8@1+ (1,0) [0|255] ""  VCU
+ SG_ DCDC_2_FaultCode : 48|8@1+ (1,0) [0|255] ""  VCU
+ SG_ DCDC_2_Out_C : 32|16@1+ (0.05,-500) [-500|2776.75] "A"  VCU
+ SG_ DCDC_2_Out_V : 16|16@1+ (0.05,0) [0|3276.75] "V"  VCU
+ SG_ DCDC_2_Temp : 8|8@1+ (1,-40) [-40|215] "℃"  VCU
+ SG_ DCDC_2_SystemStaus : 5|3@1+ (1,0) [0|7] ""  VCU
+ SG_ DCDC_2_Fault_Status : 3|2@1+ (1,0) [0|3] ""  VCU
+ SG_ DCDC_2_Status : 1|2@1+ (1,0) [0|3] ""  VCU
+
+BO_ 324 DBS_Status3: 8 DBS
+ SG_ DBS_WaringCode_144 : 0|16@1+ (1,0) [0|16777215] ""  VCU
+ SG_ DBS_CheckSum : 56|8@1+ (1,0) [0|255] ""  VCU
+ SG_ DBS_InputVoltage : 32|8@1+ (0.1,0) [0|25.5] ""  VCU
+ SG_ DBS_MotorRpm : 40|16@1+ (1,0) [0|65535] ""  VCU
+ SG_ DBS_PCBtemp : 24|8@1+ (1,-40) [-40|215] ""  VCU
+
+
+
+CM_ SG_ 353 VCU_BMS_Precharge_Relay_Sts "预充继电器状态
+0x00 : open
+0x01: close";
+CM_ SG_ 383 VCU_DCDC1_Reserved "原DCDC复位控制指令 保留未使用
+01:NO Resert(DC/DC_2不复位)
+10:Reset(DC/DC_2复位)
+00,11:Invalid(无效)";
+CM_ SG_ 383 VCU_DCDC1_Enable "DCDC使能控制指令
+01:Disable(DC/DC_2不使能)
+10:Enable(DC/DC_2使能)
+00,11:Invalid(无效)";
+CM_ SG_ 369 DCDC_1_Life "DCDC生命帧";
+CM_ SG_ 369 DCDC_1_FaultCode "DCDC故障码";
+CM_ SG_ 369 DCDC_1_Temp "DCDC控制器温度";
+CM_ SG_ 369 DCDC_1_SystemStaus "000:Ready(就绪)              正常工作，有高压输入和输出；
+100:PowerUp(高压电源接通)     已完成DCDC上电或者使能已收到
+101:Error(故障)
+111:Diag_Cali(诊断和标定)
+Other:Reserve";
+CM_ SG_ 369 DCDC_1_Fault_Status "DCDC故障状态
+00:Normal
+01:Level 1(轻微故障,报警,不停机)
+10:Level 2(严重故障,报警停机)
+11:Reserve";
+CM_ SG_ 369 DCDC_1_Status "DCDC Mode
+DCDC工作状态
+00:Stop(停机)
+01:PreOpo(待机)
+10:Opo(工作)
+11:Reserve";
+CM_ SG_ 420 BMS_Insulation_Resist "绝缘值";
+CM_ SG_ 420 BMS_HighVolt2 "负载端高压检测值";
+CM_ SG_ 419 BMS_Pwr30s "动力电池当前瞬时最大放电功率";
+CM_ SG_ 419 BMS_Pwr "动力电池当前最大放电功率";
+CM_ SG_ 419 BMS_ChgPwr30s "动力电池当前瞬时充电功率";
+CM_ SG_ 419 BMS_ChgPwr "动力电池当前最大充电功率";
+CM_ SG_ 1014 Charger_ActuTem "充电机当前温度";
+CM_ SG_ 1014 Fan_Enable "风扇工作使能";
+CM_ SG_ 1014 Charge_Int_Sts "初始化完成";
+CM_ SG_ 1014 Charge_Work_Sts "工作状态";
+CM_ SG_ 1014 ChargerCommunicationSts "通信状态";
+CM_ SG_ 1014 Charge_Output_ShortCircuit "输出短路";
+CM_ SG_ 1014 Charger_Output_OverCurrent "输出过流";
+CM_ SG_ 1014 Charger_Output_OverVoltage "输出过压";
+CM_ SG_ 1014 Charger_Output_UnderVoltage "输出欠压";
+CM_ SG_ 1014 Charger_Coupling "充电机间耦合度状态";
+CM_ SG_ 1014 ChargerOTP " 充电机温度保护状态 ";
+CM_ SG_ 1014 ChargerHardwareProtect "硬件保护";
+CM_ SG_ 1014 Charger_Output_Current "充电机输出电流";
+CM_ SG_ 1014 Charger_Output_Voltage "充电机输出电压";
+CM_ SG_ 997 Invaild_S2_Sts "S2开关控制位状态
+0断开，1闭合";
+CM_ SG_ 997 Invaild_Electronic_Lock_Sts "电子锁状态
+0判断中，1已锁，2未锁，3解锁故障（控制解锁实际检测到已锁），4上锁故障（控制上锁实际检测到未锁）";
+CM_ SG_ 997 Invaild_Charging_Socket_TemSts "充电插座过热故障
+0正常，1充电插座过温保护";
+CM_ SG_ 997 Invaild_Cooling_Pump_Fan_Enable "冷却水泵风扇工作使能
+0关闭，1开启";
+CM_ SG_ 997 Invaild_Fan_Enable "风扇工作使能
+0关闭，1开启";
+CM_ SG_ 997 Charge_Int_Sts "初始化完成
+0：初始化未完成，1初始化完成";
+CM_ SG_ 997 Charge_Work_Sts "工作状态
+1工作，2停机，3停机或待机";
+CM_ SG_ 997 Charge_Output_ShortCircuit "输出短路
+0正常，1故障";
+CM_ SG_ 997 Charger_Output_OverCurrent "输出过流
+0正常，1故障";
+CM_ SG_ 997 Charger_Output_UnderVoltage "输出欠压
+0正常，1故障";
+CM_ SG_ 997 Charger_Output_OverVoltage "输出过压
+0正常，1故障";
+CM_ SG_ 997 Invaild_CP_Sts "CP信号状态
+0 未检测到CP信号，1 CP信号正常";
+CM_ SG_ 997 Invaild_CC_Sts "CC信号状态
+0未连接，1半连接3300欧，2正常连接，3电阻检测错误";
+CM_ SG_ 997 ChargerCommunicationSts "通信状态
+0x0: 通信正常
+0x1: 接收通信超时";
+CM_ SG_ 997 ChargerInputVoltageSts "输入电压状态
+0电压正常，1输入欠压，2输入过压，3无输入电压";
+CM_ SG_ 997 ChargerOTP "OBC温度保护状态
+0x0: 正常；
+0x1: 内部温度保护；
+";
+CM_ SG_ 997 ChargerHardwareProtect "硬件保护
+0x0: 正常
+0x1: 硬件保护";
+CM_ SG_ 997 Charger_ActuTem "Charger Actual Temperature 充电机当前温度";
+CM_ SG_ 997 Charger_Output_Voltage "Charger Output Voltage 充电机输出电压";
+CM_ SG_ 997 Charger_Output_Current "Charger Output Current充电机输出电流";
+CM_ BO_ 689 "本消息由BMS发出，包含BMS电池单体极值温度。";
+CM_ SG_ 689 BMS_Battery_Capacity_Kwh "Battery Capacity电池总容量";
+CM_ SG_ 689 BMS_Battery_Capacity_Ah "Battery Capacity电池Ah容量";
+CM_ SG_ 689 BMS_HVBatLowestTemCellNum "High Voltage Battery Lowest Temperature Cell Number
+有效值范围 1～250 
+0xFE：异常 0xFF：无效";
+CM_ SG_ 689 BMS_HVBatHighestTemCellNum "High Voltage Battery highest Temperature Cell Number
+有效值范围 1～250 
+ 0xFE：异常 0xFF：无效";
+CM_ SG_ 689 BMS_HVBatHighestTem "High Voltage Battery highest Temperature";
+CM_ SG_ 689 BMS_HVBatLowestTem "High Voltage Battery Lowest Temperature";
+CM_ SG_ 1443 VCU_PowerOn_V2L "0x0：放电继电器断开
+0x1：放电继电器吸合";
+CM_ SG_ 1443 VCU_Ctrl_Wireless "0x01: 充电继电器断开
+0x02: 充电继电器吸合";
+CM_ SG_ 1443 VCU_Ctrl_AcDc "0x00: 空调继电器断开
+0x01: 空调继电器吸合";
+CM_ SG_ 1443 VCU_PowerOn_BMS "0x0：主正吸合
+0x1：主正断开";
+CM_ SG_ 690 BMS_HVBatCellTem_No8 "High Voltage Battery Cell Temperature_No.8";
+CM_ SG_ 690 BMS_HVBatCellTem_No7 "High Voltage Battery Cell Temperature_No.7";
+CM_ SG_ 690 BMS_HVBatCellTem_No6 "High Voltage Battery Cell Temperature_No.6";
+CM_ SG_ 690 BMS_HVBatCellTem_No5 "High Voltage Battery Cell Temperature_No.5";
+CM_ SG_ 690 BMS_HVBatCellTem_No4 "High Voltage Battery Cell Temperature_No.4";
+CM_ SG_ 690 BMS_HVBatCellTem_No3 "High Voltage Battery Cell Temperature_No.3";
+CM_ SG_ 690 BMS_HVBatCellTem_No2 "High Voltage Battery Cell Temperature_No.2";
+CM_ SG_ 690 BMS_HVBatCellTem_No1 "High Voltage Battery Cell Temperature_No.1";
+CM_ SG_ 679 BMS_HVBatCellVol_No24 "High Voltage Battery Cell Voltage_No.24";
+CM_ SG_ 679 BMS_HVBatCellVol_No23 "High Voltage Battery Cell Voltage_No.23";
+CM_ SG_ 679 BMS_HVBatCellVol_No22 "High Voltage Battery Cell Voltage_No.22";
+CM_ SG_ 679 BMS_HVBatCellVol_No21 "High Voltage Battery Cell Voltage_No.21";
+CM_ SG_ 678 BMS_HVBatCellVol_No20 "High Voltage Battery Cell Voltage_No.20";
+CM_ SG_ 678 BMS_HVBatCellVol_No19 "High Voltage Battery Cell Voltage_No.19";
+CM_ SG_ 678 BMS_HVBatCellVol_No18 "High Voltage Battery Cell Voltage_No.18";
+CM_ SG_ 678 BMS_HVBatCellVol_No17 "High Voltage Battery Cell Voltage_No.17";
+CM_ SG_ 677 BMS_HVBatCellVol_No16 "High Voltage Battery Cell Voltage_No.16";
+CM_ SG_ 677 BMS_HVBatCellVol_No15 "High Voltage Battery Cell Voltage_No.15";
+CM_ SG_ 677 BMS_HVBatCellVol_No14 "High Voltage Battery Cell Voltage_No.14";
+CM_ SG_ 677 BMS_HVBatCellVol_No13 "High Voltage Battery Cell Voltage_No.13";
+CM_ SG_ 676 BMS_HVBatCellVol_No12 "High Voltage Battery Cell Voltage_No.12";
+CM_ SG_ 676 BMS_HVBatCellVol_No11 "High Voltage Battery Cell Voltage_No.11";
+CM_ SG_ 676 BMS_HVBatCellVol_No10 "High Voltage Battery Cell Voltage_No.10";
+CM_ SG_ 676 BMS_HVBatCellVol_No9 "High Voltage Battery Cell Voltage_No.9";
+CM_ SG_ 675 BMS_HVBatCellVol_No8 "High Voltage Battery Cell Voltage_No.8";
+CM_ SG_ 675 BMS_HVBatCellVol_No7 "High Voltage Battery Cell Voltage_No.7";
+CM_ SG_ 675 BMS_HVBatCellVol_No6 "High Voltage Battery Cell Voltage_No.6";
+CM_ SG_ 675 BMS_HVBatCellVol_No5 "High Voltage Battery Cell Voltage_No.5";
+CM_ SG_ 674 BMS_HVBatCellVol_No4 "High Voltage Battery Cell Voltage_No.4";
+CM_ SG_ 674 BMS_HVBatCellVol_No3 "High Voltage Battery Cell Voltage_No.3";
+CM_ SG_ 674 BMS_HVBatCellVol_No2 "High Voltage Battery Cell Voltage_No.2";
+CM_ SG_ 674 BMS_HVBatCellVol_No1 "High Voltage Battery Cell Voltage_No.1";
+CM_ BO_ 673 "本消息由BMS发出，包含动力电池包单体极值电压。";
+CM_ SG_ 673 BMS_HVBatCellVolDiff "High Voltage Battery Cell Voltage Difference";
+CM_ SG_ 673 BMS_HVBatLowestVolCellNum "0x0-0xFF:Cell Number";
+CM_ SG_ 673 BMS_HVBatHighestVolCellNum "0x0-0xFF:Cell Number";
+CM_ SG_ 673 BMS_HVBatHighestCellVol "High Voltage Battery highest Cell Voltage";
+CM_ SG_ 673 BMS_HVBatLowestCellVol "High Voltage Battery Lowest Cell Voltage";
+CM_ BO_ 160 "由BMS发出，包含BMS 以及动力电池工作状态";
+CM_ SG_ 160 BMS_HVDisplaySOH "显示SOH";
+CM_ SG_ 160 BMS_Sys_Flt "故障代码 ";
+CM_ SG_ 160 BMS_Charge_StsCc "慢充连接状态
+0x00: connect
+0x01: disconect";
+CM_ SG_ 160 BMS_Charge_StsCc2 "快充连接状态
+0x00: connect
+0x01: disconect";
+CM_ SG_ 160 BMS_Sys_Sts "0x0:Normal 正常
+0x1:Level 1 Fault 一级故障(告警) 
+0x2：Level 2 Fault 二级故障（限功率）
+0x3：Level 3 Fault 三级故障（限功率为0，主动停机）
+";
+CM_ SG_ 160 BMS_HVBatSOC "High Voltage Battery State Of Charge
+高压电池SOC状态";
+CM_ SG_ 160 BMS_HVBatVol "High Voltage Battery Voltage
+高压电池当前电压";
+CM_ SG_ 160 BMS_HVBatCrnt "High Voltage Battery Current
+高压电池当前电流";
+CM_ SG_ 1012 BMS_CC_Value "CC阻值
+";
+CM_ SG_ 1012 BMS_Control_Charge_Mode "BMS_Control_Charge_Mode
+控制充电模式
+0x0:Charge Mode 充电模式
+0x1:Heat Mode 加热模式（充电模式时充电机需要检测到电池电压才响应充电使能位，用于给电池充电；加热模式时充电机不需要检测到电池电压就响应充电使能位，用于给电池的加热膜加热）
+0x2-0xFF：Not Used 未定义";
+CM_ SG_ 1012 BMS_OBC_MaxChargeVoltage "交流充电机最大允许充电输出电压";
+CM_ SG_ 1012 BMS_OBC_MaxChargeCurrent "交流充电机最大允许充电输出电流";
+CM_ SG_ 1012 BMS_Enable_Charge_State "BMS_Enable_Charge_State
+BMS控制工作使能
+0x0:Start to Charge 开始充电
+0x1:OBC Stop output 关闭输出
+0x2:Charge End 充电结束（（充电机收到该指令后先断开S2，然后进入休眠模式））
+0x3-0xFF：Not Used 未定义";
+CM_ BO_ 418 "本消息由BMS发出，包含BMS诊断信息。";
+CM_ SG_ 418 BMS_CP_Vol "CP检测点2电压";
+CM_ SG_ 418 BMS_CP "CP占空比";
+CM_ SG_ 418 BMS_APlus "A+电压";
+CM_ SG_ 418 BMS_CC_Sts "CC信号状态
+
+0x00:未连接
+0x01:半连接3300欧
+0x02:正常连接
+0x03:电阻检测错误";
+CM_ SG_ 418 BMS_CP_Sts "CP信号状态
+
+0x00:未检测到CP信号
+0x01:CP信号正常
+";
+CM_ SG_ 418 BMS_S2_Sts "S2开关控制位状态
+
+0x00:open
+0x01:close";
+CM_ SG_ 418 BMS_Charge_Relay_Sts "0x00 : open
+0x01: close
+充电继电器状态";
+CM_ SG_ 418 BMS_AcDc_Relay_Sts "0x00 : open
+0x01: close
+空调继电器状态";
+CM_ SG_ 418 BMS_WeakUpSig "BMS唤醒源
+0x01: keyon
+0x02: A+
+0x04: CP";
+CM_ SG_ 418 BMS_KeyOn "常电电压";
+CM_ SG_ 418 BMS_Req_HvDown "BMS请求下高压
+0x00: 无请求
+0x01: 请求高压下电";
+CM_ SG_ 418 BMS_SelfChk_Sts "BMS自检状态
+0x00: 自检中
+0x01: 自检成功
+0x02: 自检失败";
+CM_ SG_ 418 BMS_Heat_Relay_Sts "加热继电器状态
+0x00 : open
+0x01: close";
+CM_ SG_ 418 BMS_Precharge_Sts "预充状态
+0x00: 无效
+0x01: 预充中
+0x02: 预充成功
+0x03: 预充失败";
+CM_ SG_ 418 BMS_Charge_Sts "0x00: 非充电状态(比如休眠 放电中 放电故障等)
+0x01: 充电中
+0x02 : 加热中
+0x03 : 边充电边加热中
+0x04: 充电完成(在充电完成时，检测到充电故障发充电完成)
+0x05: 充电故障";
+CM_ SG_ 418 BMS_Heart_Beat "心跳信号";
+CM_ SG_ 418 BMS_Precharge_Relay_Sts "预充继电器状态
+0x00 : open
+0x01: close";
+CM_ SG_ 418 BMS_Parent_Relay_Sts "主正继电器状态
+0x00 : open
+0x01: close";
+CM_ SG_ 325 DBS_SwVer_Year "软件版本年";
+CM_ SG_ 325 DBS_SwVer_Month "软件版本月";
+CM_ SG_ 325 DBS_SwVer_Date "软件版本日";
+CM_ SG_ 325 DBS_RevisionVersion "修订版本号";
+CM_ SG_ 325 DBS_MinorVersion "次版本号";
+CM_ SG_ 325 DBS_MajorVersion "主版本号";
+CM_ SG_ 323 DBS_Angle "电机角度";
+CM_ SG_ 323 DBS_ActualReactPress "实际执行压力值";
+CM_ SG_ 323 DBS_CheckSum "CheckSum校验和,Checksum = byte0 XOR byte1  XOR  byte2 XOR ····· XOR byte6";
+CM_ SG_ 323 DBS_WaringCode_143 "警告类型。 
+第0bit：急停按键闭合警告；
+第1bit：驻车时间过长，超1min；
+第2bit：CAN1中断警告；
+第3bit：CAN2中断警告；
+第4bit：点火线断开警告；
+第5bit：电流异常警告
+第6bit：温度过高警告
+第7bit：输入电压过高警告";
+CM_ SG_ 323 DBS_FaultCode "故障类型。 
+第1bit：过载保护；
+第2bit：过温保护；
+第3bit：过流保护；
+第4bit：电源欠压故障；
+第5bit：电源过压故障；
+第6bit：压力不足；
+第7bit：电机故障；
+第8bit：通讯故障；
+第9bit：电流采样故障；
+第10bit：驱动故障；
+第11bit：磁编故障；
+第12bit：压力传感器故障；
+第13bit：踏板位置传感器故障；
+第14bit：其他故障；";
+CM_ SG_ 322 DBS_BrakePressureReqACK "制动压力请求应答，DBS执行完成应答有效
+0x0: Not ACK
+0x1: ACK";
+CM_ SG_ 322 DBS_EstopFlag "急停标志位";
+CM_ SG_ 322 DBS_PedaiFlag "踏板插入标志位：
+0：踏板未插入
+1：踏板已插入";
+CM_ SG_ 322 DBS_Ref_Iq "实际电流";
+CM_ SG_ 322 DBS_Work_Mode "工作模式（0：线控液压控制，1：排气模式，2：踏板模式）
+0x0:CAN control
+0x1:Exhaust Mode     
+0x2:Pedal Mode （踏板模式为0-5V电信号输入，对应0-8MPa压力反馈，有电压输入时，优先进入该模式）   
+0x3:Iq control Mode (此时请求非0压力会有8A电流，请求0压力会有-1A电流)                  ";
+CM_ SG_ 322 DBS_RollingCounter "从0到15循环计数，如果通信中断，则重新从0开始计数";
+CM_ SG_ 322 DBS_Park_Warning "驻车时间警告信号。0：正常工作；1：驻车时间超过1分钟，发出警告，建议EPB驻车请求。";
+CM_ SG_ 322 DBS_PeadalOpening "踏板开合度（0%—100%）";
+CM_ SG_ 322 DBS_CheckSum "CheckSum校验和,Checksum = byte0 XOR byte1  XOR  byte2 XOR ····· XOR byte6";
+CM_ SG_ 322 DBS_HP_pressure "前轮制动系统压力反馈";
+CM_ SG_ 322 DBS_System_Status "系统故障状态
+0:System No Fault
+1:System Waring
+2:System Fault";
+CM_ SG_ 340 VCU_DBS_PwrOff "下电标志位，期间屏蔽警告";
+CM_ SG_ 340 VCU_DBS_SoftReset "软件复位
+0x00:无请求
+0x01:软复位请求";
+CM_ SG_ 340 VCU_DBS_SpeedFlag "0x0：车辆未行驶
+0x1：车辆行驶中";
+CM_ SG_ 340 VCU_DBS_Work_Mode "排气模式（0：线控模式，1：排气模式，2：踏板模式，3：电流控制模式）";
+CM_ SG_ 340 VCU_DBS_Pressure_Request "发送目标压力";
+CM_ SG_ 340 VCU_DBS_Request_Flag "VCU制动请求使能位 0：助力模式；1线控模式";
+CM_ SG_ 16 Motor_ActIdc "电机三相电流";
+CM_ SG_ 16 Motor_ActSpeed "电机转速";
+CM_ SG_ 16 Motor_ActDir "MCU内部实际响应趋势
+0x00:N
+0x01:D
+0x02:R";
+CM_ SG_ 16 Motor_ActTorque "电机反馈扭矩";
+CM_ SG_ 16 Motor_FalutCode "故障码详见故障列表";
+CM_ SG_ 16 Motor_Temp "电机温度";
+CM_ SG_ 96 MCU_MotMaxPwr "电机峰值功率";
+CM_ SG_ 96 MCU_stOpMode "电机模式反馈：0x0:零扭矩模式 0x1:零速度模式 0x2:扭矩环模式 0x3:速度环模式 ";
+CM_ SG_ 96 MCU_ClampingBrakeStatus "抱闸状态
+0：未抱闸
+1：抱闸";
+CM_ SG_ 96 MCU_stMode "电机模式：
+0x00:主正泄放完成 
+0x01:初始化完成
+0x02:待机
+0x03:运行 
+0x04:自检故障 （只针对3级故障，有此故障不允许上高压）";
+CM_ SG_ 96 MCU_Idc "母线电流";
+CM_ SG_ 96 MCU_FalutLevel "故障等级：
+0x00: 无故障 
+0x01: 一级故障
+0x02: 二级故障
+0x03: 三级故障";
+CM_ SG_ 96 MCU_Temp "MCU控制器温度";
+CM_ SG_ 96 MCU_Udc "母线电压";
+CM_ SG_ 97 MCU_SwRev "Revision";
+CM_ SG_ 97 MCU_SwMinor "Minor Version";
+CM_ SG_ 97 MCU_SwMajor "Major version";
+CM_ SG_ 97 MCU_HwMinor "HW minor version";
+CM_ SG_ 97 MCU_SwTpye "软件类型
+0x00:Private
+0x01:Dev
+0x02:Rel";
+CM_ SG_ 97 MCU_SwVer_Month "软件版本月";
+CM_ SG_ 97 MCU_SwVer_Year "软件版本年";
+CM_ SG_ 97 MCU_SwVer_Date "软件版本日";
+CM_ SG_ 97 MCU_HwMajor "HW major version";
+CM_ SG_ 352 VCU_stMovDir "0x00:N 无实际意义，表示各运行模式的默认趋势。
+0x01:D
+0x02:R
+注：指明运动趋势用途，控制量按照正负发送。用以MCU逻辑判断";
+CM_ SG_ 352 VCU_SoftReset "0x00:无请求
+0x01:请求复位";
+CM_ SG_ 352 VCU_ActiveHVReleaseReq "0x00:无请求
+0x01:主动泄压";
+CM_ SG_ 352 VCU_MotNegSpdLmt "扭矩模式下电机负转速都不应超过此限速";
+CM_ SG_ 352 VCU_MotNegTrqLmt "速度模式下电机负扭矩都不应超过此限值";
+CM_ SG_ 352 VCU_ClampingBrakeReq "电机抱闸请求
+0：松抱闸
+1：抱闸";
+CM_ SG_ 352 VCU_VehHVReady "电机状态
+0x0：进入待机状态
+0x1：可进入运行状态";
+CM_ SG_ 352 VCU_ModeReq "电机模式请求
+0x0：零扭矩模式
+0x1：零速度模式
+0x2：扭矩环模式
+0x3：速度环模式 ";
+CM_ SG_ 352 VCU_TargetSpdReq "转速请求：请求的转速，正转速为正转，负转速为反转 
+";
+CM_ SG_ 352 VCU_MotPosSpdLmt "扭矩模式下电机正转速都不应超过此限速";
+CM_ SG_ 352 VCU_MotPosTrqLmt "速度模式下电机正扭矩都不应超过此限值";
+CM_ SG_ 352 VCU_TargetTqReq "扭矩请求：请求的扭矩,正扭矩为正转，负扭矩为反转 ，当电机旋转方向与扭矩值正负符号一致时为电机做功状态，反之则为发电状态";
+CM_ SG_ 639 VCU_DCDC2_Reserved "原DCDC复位控制指令 保留未使用
+01:NO Resert(DC/DC_2不复位)
+10:Reset(DC/DC_2复位)
+00,11:Invalid(无效)";
+CM_ SG_ 639 VCU_DCDC2_Enable "DCDC使能控制指令
+01:Disable(DC/DC_2不使能)
+10:Enable(DC/DC_2使能)
+00,11:Invalid(无效)";
+CM_ SG_ 625 DCDC_2_Life "DCDC生命帧";
+CM_ SG_ 625 DCDC_2_FaultCode "DCDC故障码";
+CM_ SG_ 625 DCDC_2_Temp "DCDC控制器温度";
+CM_ SG_ 625 DCDC_2_SystemStaus "000:Ready(就绪)              正常工作，有高压输入和输出；
+100:PowerUp(高压电源接通)     已完成DCDC上电或者使能已收到
+101:Error(故障)
+111:Diag_Cali(诊断和标定)
+Other:Reserve";
+CM_ SG_ 625 DCDC_2_Fault_Status "DCDC故障状态
+00:Normal
+01:Level 1(轻微故障,报警,不停机)
+10:Level 2(严重故障,报警停机)
+11:Reserve";
+CM_ SG_ 625 DCDC_2_Status "DCDC Mode
+DCDC工作状态
+00:Stop(停机)
+01:PreOpo(待机)
+10:Opo(工作)
+11:Reserve";
+CM_ SG_ 324 DBS_WaringCode_144 "警告类型。 
+第0bit：输入电压过低警告
+第1bit：角度过大警告
+第2bit：残压警告
+第3bit：压力不足警告";
+CM_ SG_ 324 DBS_CheckSum "CheckSum校验和,Checksum = byte0 XOR byte1  XOR  byte2 XOR ····· XOR byte6";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "DBName" "W2_CAN0";
+BA_ "GenMsgSendType" BO_ 1013 0;
+BA_ "GenMsgCycleTime" BO_ 1013 500;
+BA_ "GenMsgSendType" BO_ 353 0;
+BA_ "GenMsgCycleTime" BO_ 353 20;
+BA_ "GenMsgSendType" BO_ 383 0;
+BA_ "GenMsgCycleTime" BO_ 383 100;
+BA_ "GenMsgCycleTime" BO_ 369 100;
+BA_ "GenMsgSendType" BO_ 369 0;
+BA_ "GenMsgSendType" BO_ 420 0;
+BA_ "GenMsgCycleTime" BO_ 420 100;
+BA_ "GenMsgSendType" BO_ 419 0;
+BA_ "GenMsgCycleTime" BO_ 419 100;
+BA_ "GenMsgSendType" BO_ 1014 0;
+BA_ "GenMsgCycleTime" BO_ 1014 1000;
+BA_ "GenMsgSendType" BO_ 997 0;
+BA_ "GenMsgCycleTime" BO_ 997 1000;
+BA_ "GenMsgSendType" BO_ 689 0;
+BA_ "GenMsgCycleTime" BO_ 689 100;
+BA_ "GenMsgSendType" BO_ 1443 0;
+BA_ "GenMsgCycleTime" BO_ 1443 20;
+BA_ "GenMsgSendType" BO_ 690 0;
+BA_ "GenMsgCycleTime" BO_ 690 1000;
+BA_ "GenMsgSendType" BO_ 679 0;
+BA_ "GenMsgCycleTime" BO_ 679 1000;
+BA_ "GenMsgSendType" BO_ 678 0;
+BA_ "GenMsgCycleTime" BO_ 678 1000;
+BA_ "GenMsgSendType" BO_ 677 0;
+BA_ "GenMsgCycleTime" BO_ 677 1000;
+BA_ "GenMsgSendType" BO_ 676 0;
+BA_ "GenMsgCycleTime" BO_ 676 1000;
+BA_ "GenMsgSendType" BO_ 675 0;
+BA_ "GenMsgCycleTime" BO_ 675 1000;
+BA_ "GenMsgSendType" BO_ 674 0;
+BA_ "GenMsgCycleTime" BO_ 674 1000;
+BA_ "GenMsgSendType" BO_ 673 0;
+BA_ "GenMsgCycleTime" BO_ 673 100;
+BA_ "GenMsgSendType" BO_ 160 0;
+BA_ "GenMsgCycleTime" BO_ 160 100;
+BA_ "GenMsgSendType" BO_ 1012 0;
+BA_ "GenMsgCycleTime" BO_ 1012 100;
+BA_ "GenMsgSendType" BO_ 418 0;
+BA_ "GenMsgCycleTime" BO_ 418 100;
+BA_ "GenMsgSendType" BO_ 325 0;
+BA_ "GenMsgCycleTime" BO_ 325 1000;
+BA_ "GenMsgSendType" BO_ 323 0;
+BA_ "GenMsgCycleTime" BO_ 323 10;
+BA_ "GenMsgSendType" BO_ 322 0;
+BA_ "GenMsgCycleTime" BO_ 322 10;
+BA_ "GenMsgSendType" BO_ 340 0;
+BA_ "GenMsgCycleTime" BO_ 340 20;
+BA_ "GenMsgSendType" BO_ 16 0;
+BA_ "GenMsgCycleTime" BO_ 16 20;
+BA_ "GenMsgCycleTime" BO_ 96 20;
+BA_ "GenMsgSendType" BO_ 96 0;
+BA_ "GenMsgSendType" BO_ 97 0;
+BA_ "GenMsgCycleTime" BO_ 97 5000;
+BA_ "GenMsgSendType" BO_ 352 0;
+BA_ "GenMsgCycleTime" BO_ 352 20;
+BA_ "GenMsgSendType" BO_ 639 0;
+BA_ "GenMsgCycleTime" BO_ 639 100;
+BA_ "GenMsgSendType" BO_ 625 0;
+BA_ "GenMsgCycleTime" BO_ 625 100;
+BA_ "GenMsgCycleTime" BO_ 324 100;
+BA_ "GenMsgSendType" BO_ 324 0;
+VAL_ 1014 Fan_Enable 0 " 关闭" 1 " 开启" ;
+VAL_ 1014 Charge_Int_Sts 0 " 初始化未完成" 1 " 初始化完成" ;
+VAL_ 1014 Charge_Work_Sts 1 " 工作" 2 "停机" 3 "停机或待机" ;
+VAL_ 1014 ChargerCommunicationSts 0 " 通信正常" 1 " 接收通信超时" ;
+VAL_ 1014 Charge_Output_ShortCircuit 0 " 正常" 1 " 故障" ;
+VAL_ 1014 Charger_Output_OverCurrent 0 " 正常" 1 " 故障" ;
+VAL_ 1014 Charger_Output_OverVoltage 0 " 正常" 1 " 故障" ;
+VAL_ 1014 Charger_Output_UnderVoltage 0 " 正常" 1 " 故障" ;
+VAL_ 1014 Charger_Coupling 0 " 极差" 1 " 差" ;
+VAL_ 1014 ChargerOTP 0 " 正常" 1 " 内部温度保护" ;
+VAL_ 1014 ChargerHardwareProtect 0 " 正常" 1 " 硬件保护" ;
+VAL_ 1443 VCU_PowerOn_V2L 1 "放电继电器吸合" 0 "放电继电器断开" ;
+VAL_ 1443 VCU_Ctrl_Wireless 2 "充电继电器吸合" 1 "充电继电器断开" ;
+VAL_ 1443 VCU_Ctrl_AcDc 1 "空调继电器吸合" 0 "空调继电器断开" ;
+VAL_ 1443 VCU_PowerOn_BMS 1 "主正断开" 0 "主正吸合" ;
+VAL_ 96 MCU_MFGMotID 2 "ZLOG+5kw" 1 "HP+4kw" 0 "Reserved" ;
+
